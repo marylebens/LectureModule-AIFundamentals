@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="com.minneapoliscollege.github_lesson_001" version="1.0"
+          xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                              http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd
+                              http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location>
+  </metadata>
+  
+  <organizations default="ORG-GITHUB-001">
+    <organization identifier="ORG-GITHUB-001">
+      <title>Introduction to GitHub and Version Control</title>
+      <item identifier="ITEM-001" identifierref="RES-001" isvisible="true">
+        <title>GitHub Basics for Developers</title>
+        <adlcp:masteryscore>70</adlcp:masteryscore>
+      </item>
+    </organization>
+  </organizations>
+  
+  <resources>
+    <resource identifier="RES-001" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="index.html"/>
+      <file href="styles.css"/>
+      <file href="scorm_api_wrapper.js"/>
+      <file href="lesson.js"/>
+      <file href="images/BeardedDragon_mouse.jpg"/>
+      <file href="images/beaver-laptop.jpg"/>
+      <file href="images/business-women.jpg"/>
+      <file href="images/chameleon_keyboard_computer.jpg"/>
+      <file href="images/computer-dog-44.jpg"/>
+      <file href="images/computer-hamster4.jpg"/>
+      <file href="images/Computer-Programmer-Agile.jpg"/>
+      <file href="images/computer-programmer-students.jpg"/>
+      <file href="images/developers-coding.jpg"/>
+      <file href="images/developer-writing-documentation.jpg"/>
+      <file href="audio/slide1.mp3"/>
+      <file href="audio/slide2.mp3"/>
+      <file href="audio/slide4.mp3"/>
+      <file href="audio/slide7.mp3"/>
+      <file href="audio/slide10.mp3"/>
+      <file href="audio/slide11.mp3"/>
+      <file href="audio/slide13.mp3"/>
+      <file href="audio/slide15.mp3"/>
+      <file href="audio/slide18.mp3"/>
+      <file href="audio/AlexBeroza_-_All_As_One-Outro-long.mp3"/>
+    </resource>
+  </resources>
+  
+</manifest>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+  
+  <general>
+    <title>
+      <langstring xml:lang="en">Introduction to GitHub and Version Control</langstring>
+    </title>
+    <catalogentry>
+      <catalog>Minneapolis College Course Catalog</catalog>
+      <entry>
+        <langstring xml:lang="en">ITEC-GITHUB-001</langstring>
+      </entry>
+    </catalogentry>
+    <language>en</language>
+    <description>
+      <langstring xml:lang="en">This lesson introduces students to GitHub and version control concepts. Students will learn what GitHub is, how to use basic Git commands, understand branching and forking, and learn how to share repositories with instructors and classmates. The lesson emphasizes that while GitHub has a learning curve, it is the industry standard tool used by millions of developers worldwide.</langstring>
+    </description>
+    <keyword>
+      <langstring xml:lang="en">GitHub</langstring>
+    </keyword>
+    <keyword>
+      <langstring xml:lang="en">Git</langstring>
+    </keyword>
+    <keyword>
+      <langstring xml:lang="en">Version Control</langstring>
+    </keyword>
+    <keyword>
+      <langstring xml:lang="en">Programming</langstring>
+    </keyword>
+    <keyword>
+      <langstring xml:lang="en">Software Development</langstring>
+    </keyword>
+  </general>
+  
+  <lifecycle>
+    <version>
+      <langstring xml:lang="en">1.0</langstring>
+    </version>
+    <status>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Final</langstring>
+      </value>
+    </status>
+    <contribute>
+      <role>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">Author</langstring>
+        </value>
+      </role>
+      <centity>
+        <vcard>BEGIN:VCARD
+VERSION:3.0
+FN:Dr. Mary
+ORG:Minneapolis College
+EMAIL:mary@minneapolis.edu
+END:VCARD</vcard>
+      </centity>
+      <date>
+        <datetime>2025-01-01</datetime>
+      </date>
+    </contribute>
+  </lifecycle>
+  
+  <technical>
+    <format>text/html</format>
+    <location>index.html</location>
+    <requirement>
+      <type>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">Browser</langstring>
+        </value>
+      </type>
+      <name>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">Any</langstring>
+        </value>
+      </name>
+    </requirement>
+  </technical>
+  
+  <educational>
+    <learningresourcetype>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Lesson</langstring>
+      </value>
+    </learningresourcetype>
+    <intendedenduserrole>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Learner</langstring>
+      </value>
+    </intendedenduserrole>
+    <context>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Higher Education</langstring>
+      </value>
+    </context>
+    <typicallearningtime>
+      <datetime>PT30M</datetime>
+    </typicallearningtime>
+  </educational>
+  
+  <rights>
+    <cost>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">No</langstring>
+      </value>
+    </cost>
+    <copyrightandotherrestrictions>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Yes</langstring>
+      </value>
+    </copyrightandotherrestrictions>
+    <description>
+      <langstring xml:lang="en">Copyright 2025 Minneapolis College. All rights reserved. For educational use only.</langstring>
+    </description>
+  </rights>
+  
+</lom>

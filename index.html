@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to GitHub and Version Control</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scorm_api_wrapper.js"></script>
+    <script src="lesson.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Introduction to GitHub and Version Control</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <!-- Audio Player -->
+            <div class="audio-container">
+                <audio id="persistentAudio" controls preload="none">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </header>
+
+        <div class="main-wrapper">
+            <nav class="sidebar-menu" role="navigation" aria-label="Lesson navigation">
+                <h2>Contents</h2>
+                <ul>
+                    <li><a href="#" onclick="goToSlide(1); return false;" id="nav-1">Welcome</a></li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(2); return false;" id="nav-2">What is GitHub?</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(3); return false;" id="nav-3">Quiz: What company owns GitHub?</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(4); return false;" id="nav-4">Version Control</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(5); return false;" id="nav-5">Quiz: Purpose of version control?</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(6); return false;" id="nav-6">Watch: Intro to Git</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(7); return false;" id="nav-7">Quiz: What does git add do?</a></li>
+                            <li><a href="#" onclick="goToSlide(8); return false;" id="nav-8">Quiz: What does git commit do?</a></li>
+                            <li><a href="#" onclick="goToSlide(9); return false;" id="nav-9">Quiz: What does git push do?</a></li>
+                            <li><a href="#" onclick="goToSlide(10); return false;" id="nav-10">Quiz: Order the Git workflow</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(11); return false;" id="nav-11">Repositories</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(12); return false;" id="nav-12">Quiz: Match the terms</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(13); return false;" id="nav-13">Branching</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(14); return false;" id="nav-14">Quiz: Why use branches?</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(15); return false;" id="nav-15">Forking vs. Cloning</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(16); return false;" id="nav-16">Quiz: Forking vs. cloning?</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(17); return false;" id="nav-17">Sharing Your Work</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(18); return false;" id="nav-18">Quiz: Share private repository?</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <div class="nav-item-with-toggle">
+                            <a href="#" onclick="goToSlide(19); return false;" id="nav-19">Tips for Success</a>
+                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="goToSlide(20); return false;" id="nav-20">Quiz: Best commit messages</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" onclick="goToSlide(21); return false;" id="nav-21">Conclusion</a></li>
+                    <li><a href="#" onclick="goToSlide(22); return false;" id="nav-22">📊 Score Report</a></li>
+                    <li><a href="#" onclick="goToSlide(23); return false;" id="nav-23">Credits</a></li>
+                </ul>
+            </nav>
+
+            <main id="slideContainer" role="main">
+                <!-- Slide 1: Welcome -->
+                <div class="slide active" data-slide="1" data-type="content">
+                    <h2>Welcome to GitHub Basics</h2>
+                    <div class="content">
+                        <img src="images/computer-dog-44.jpg" alt="Corgi wearing glasses at a laptop with a succulent plant" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+                        
+                        
+                        
+                        <p><strong>This is your instructor, Dr. Mary Lebens, coming to you live.</strong></p>
+                        
+                        <p>In this lesson, you'll learn about GitHub, the most popular development platform in the world. We'll cover:</p>
+                        <ul>
+                            <li>What GitHub is and why it matters.</li>
+                            <li>Version control basics.</li>
+                            <li>Working with repositories.</li>
+                            <li>Branching and forking.</li>
+                            <li>Sharing your work with instructors and classmates.</li>
+                        </ul>
+                        <p><strong>Important:</strong> GitHub has a learning curve, but it's worth it. Millions of developers use it every day, and it's a skill that will serve you throughout your career.</p>
+                        
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 14px;"><strong>Accessibility Note:</strong> The audio narration on each slide contains the same information as the text on the page. You can choose to listen to the audio or read the text based on your preference.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: What is GitHub? -->
+                <div class="slide" data-slide="2" data-type="content">
+                    <h2>What is GitHub?</h2>
+                    <div class="content">
+                        <img src="images/Computer-Programmer-Agile.jpg" alt="Developer working at desk with sticky notes on wall" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+                        
+                        
+                        
+                        <p>GitHub is a web platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
+                        
+                        <div style="background-color: #f0f7ff; padding: 20px; border-left: 4px solid #0366d6; margin: 20px 0; clear: both;">
+                            <h3>Key Facts About GitHub</h3>
+                            <ul>
+                                <li><strong>Industry Standard:</strong> Used by millions of developers worldwide.</li>
+                                <li><strong>Microsoft Owned:</strong> Microsoft acquired GitHub in 2018, though it remains independently branded.</li>
+                                <li><strong>Free for Students:</strong> Public repositories are free, and students get premium features.</li>
+                                <li><strong>Career Asset:</strong> Most tech companies expect you to know Git and GitHub.</li>
+                            </ul>
+                        </div>
+
+                        <p>Yes, GitHub can be challenging at first. But remember: every professional developer you admire went through the same learning process. Stick with it!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Quiz Question 1 -->
+                <div class="slide" data-slide="3" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What company owns GitHub?</strong></p>
+                            <label><input type="radio" name="q1" value="a"> Google</label>
+                            <label><input type="radio" name="q1" value="b"> Amazon</label>
+                            <label><input type="radio" name="q1" value="c"> Microsoft</label>
+                            <label><input type="radio" name="q1" value="d"> Apple</label>
+                            <div class="feedback" id="feedback-q1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Version Control Explained -->
+                <div class="slide" data-slide="4" data-type="content">
+                    <h2>Understanding Version Control</h2>
+                    <div class="content">
+                        <img src="images/chameleon_keyboard_computer.jpg" alt="Chameleon sitting on a keyboard" style="float: right; width: 280px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+                        
+                        
+                        
+                        <p>Version control is a system that records changes to files over time. Think of it as a time machine for your code.</p>
+                        
+                        <h3>Why Version Control Matters</h3>
+                        <ul>
+                            <li><strong>Track Changes:</strong> See what changed, when, and by whom.</li>
+                            <li><strong>Undo Mistakes:</strong> Roll back to a previous version if something breaks.</li>
+                            <li><strong>Collaborate Safely:</strong> Multiple people can work on the same project without overwriting each other's work.</li>
+                            <li><strong>Backup:</strong> Your code is safely stored in the cloud.</li>
+                            <li><strong>Experiment:</strong> Try new features without breaking your working code.</li>
+                        </ul>
+
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; clear: both;">
+                            <strong>Real World Example:</strong> Imagine writing a paper. Without version control, you might save files like "essay_final.docx", "essay_final_v2.docx", "essay_ACTUAL_final.docx". With version control, you have one file with a complete history of all changes.
+                        </div>
+
+                        <div class="commit-animation" aria-label="Animation showing how commits work">
+                            <h3>How Commits Work</h3>
+                            <div class="timeline">
+                                <div class="commit-node commit-1">
+                                    <div class="commit-circle">1</div>
+                                    <div class="commit-label">First commit<br>"Initial project setup"</div>
+                                </div>
+                                <div class="commit-arrow"></div>
+                                <div class="commit-node commit-2">
+                                    <div class="commit-circle">2</div>
+                                    <div class="commit-label">Second commit<br>"Added login feature"</div>
+                                </div>
+                                <div class="commit-arrow"></div>
+                                <div class="commit-node commit-3">
+                                    <div class="commit-circle">3</div>
+                                    <div class="commit-label">Third commit<br>"Fixed bug in validation"</div>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 15px; font-size: 14px;">Each circle represents a snapshot of your project at that moment in time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Quiz Question 2 -->
+                <div class="slide" data-slide="5" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What is the main purpose of version control?</strong></p>
+                            <label><input type="radio" name="q2" value="a"> To make your code run faster.</label>
+                            <label><input type="radio" name="q2" value="b"> To track changes and collaborate safely.</label>
+                            <label><input type="radio" name="q2" value="c"> To compile your code.</label>
+                            <label><input type="radio" name="q2" value="d"> To design user interfaces.</label>
+                            <div class="feedback" id="feedback-q2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Video - Introduction to Git -->
+                <div class="slide" data-slide="6" data-type="content">
+                    <h2>Watch: Introduction to Git</h2>
+                    <div class="content">
+                        <p>Watch this video for a beginner-friendly introduction to Git and version control:</p>
+
+                        <div style="text-align: center; margin: 30px 0;">
+                            <iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/812561/embedPlaykitJs/uiconf_id/52484262?iframeembed=true&entry_id=1_fovi50ux&config%5Bprovider%5D=%7B%22widgetId%22%3A%221_yd3evgkw%22%7D&config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 600px; height: 400px; border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Video: A brief introduction to Git for beginners - GitHub"></iframe>
+                        </div>
+
+                        <p><strong>Key Takeaway:</strong> Git is the version control system. GitHub is the website that hosts Git repositories and adds collaboration features.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Quiz - git add -->
+                <div class="slide" data-slide="7" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What does the <code>git add</code> command do?</strong></p>
+                            <label><input type="radio" name="q8" value="a"> Deletes files from your repository.</label>
+                            <label><input type="radio" name="q8" value="b"> Downloads files from GitHub.</label>
+                            <label><input type="radio" name="q8" value="c"> Stages files to be included in your next commit.</label>
+                            <label><input type="radio" name="q8" value="d"> Uploads files to GitHub.</label>
+                            <div class="feedback" id="feedback-q8"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Quiz - git commit -->
+                <div class="slide" data-slide="8" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What does the <code>git commit</code> command do?</strong></p>
+                            <label><input type="radio" name="q9" value="a"> Uploads your changes to GitHub.</label>
+                            <label><input type="radio" name="q9" value="b"> Saves a snapshot of your staged changes to your local repository.</label>
+                            <label><input type="radio" name="q9" value="c"> Deletes your changes.</label>
+                            <label><input type="radio" name="q9" value="d"> Downloads changes from GitHub.</label>
+                            <div class="feedback" id="feedback-q9"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 9: Quiz - git push -->
+                <div class="slide" data-slide="9" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What does the <code>git push</code> command do?</strong></p>
+                            <label><input type="radio" name="q10" value="a"> Uploads your committed changes to a remote repository like GitHub.</label>
+                            <label><input type="radio" name="q10" value="b"> Saves changes to your local repository.</label>
+                            <label><input type="radio" name="q10" value="c"> Stages files for commit.</label>
+                            <label><input type="radio" name="q10" value="d"> Downloads changes from GitHub.</label>
+                            <div class="feedback" id="feedback-q10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 10: Quiz - Git Workflow Ordering -->
+                <div class="slide" data-slide="10" data-type="quiz">
+                    <h2>Git Workflow</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>Put these Git commands in the correct order for a typical workflow:</strong></p>
+                            <div id="orderingContainer" class="ordering-quiz">
+                                <div class="ordering-item" draggable="true" data-step="stage">git add (stage changes)</div>
+                                <div class="ordering-item" draggable="true" data-step="commit">git commit (save snapshot)</div>
+                                <div class="ordering-item" draggable="true" data-step="push">git push (upload to GitHub)</div>
+                            </div>
+                            <button onclick="checkOrdering()" class="check-button">Check Answer</button>
+                            <div class="feedback" id="feedback-ordering"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 11: Repositories -->
+                <div class="slide" data-slide="11" data-type="content">
+                    <h2>Working with Repositories</h2>
+                    <div class="content">
+                        <img src="images/computer-hamster4.jpg" alt="Hamster sitting at a desk with a small laptop" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+                        
+                        
+                        
+                        <p>A <strong>repository</strong> (or "repo") is a folder that contains your project files and the entire history of changes.</p>
+
+                        <h3>What's in a Repository?</h3>
+                        <ul>
+                            <li>Your project files (code, images, documents).</li>
+                            <li>A README file explaining what the project is.</li>
+                            <li>A complete history of all changes.</li>
+                            <li>Branches for different versions or features.</li>
+                        </ul>
+
+                        <h3>The README File</h3>
+                        <p style="clear: both;">The README.md file is the front page of your repository. It should explain:</p>
+                        <ul>
+                            <li>What the project does.</li>
+                            <li>How to use it.</li>
+                            <li>Who created it.</li>
+                        </ul>
+
+                        <div style="background-color: #f6f8fa; padding: 15px; border-radius: 5px; margin: 20px 0; font-family: monospace; font-size: 14px;">
+                            <strong>Example README.md:</strong><br><br>
+                            # My C# Learning Project<br>
+                            This repository contains my work for ITEC 2560.<br>
+                            <br>
+                            ## Author<br>
+                            Jane Student<br>
+                            <br>
+                            ## Description<br>
+                            Practice exercises for learning C# programming.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 12: Quiz Question 3 (Matching) -->
+                <div class="slide" data-slide="12" data-type="quiz">
+                    <h2>Quick Check: Match the Terms</h2>
+                    <div class="content">
+                        <p>Match each Git term with its definition:</p>
+                        <div class="matching-quiz">
+                            <div class="matching-question">
+                                <p><strong>1. Repository</strong></p>
+                                <select name="match1" id="match1">
+                                    <option value="">-- Select Definition --</option>
+                                    <option value="a">A snapshot of your project at a specific time.</option>
+                                    <option value="b">A folder containing your project and its history.</option>
+                                    <option value="c">The main development branch.</option>
+                                    <option value="d">A message describing your changes.</option>
+                                </select>
+                            </div>
+                            <div class="matching-question">
+                                <p><strong>2. Commit</strong></p>
+                                <select name="match2" id="match2">
+                                    <option value="">-- Select Definition --</option>
+                                    <option value="a">A snapshot of your project at a specific time.</option>
+                                    <option value="b">A folder containing your project and its history.</option>
+                                    <option value="c">The main development branch.</option>
+                                    <option value="d">A message describing your changes.</option>
+                                </select>
+                            </div>
+                            <div class="matching-question">
+                                <p><strong>3. Main Branch</strong></p>
+                                <select name="match3" id="match3">
+                                    <option value="">-- Select Definition --</option>
+                                    <option value="a">A snapshot of your project at a specific time.</option>
+                                    <option value="b">A folder containing your project and its history.</option>
+                                    <option value="c">The main development branch.</option>
+                                    <option value="d">A message describing your changes.</option>
+                                </select>
+                            </div>
+                            <button onclick="checkMatching()" class="check-button">Check Answers</button>
+                            <div class="feedback" id="feedback-matching"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 13: Branching -->
+                <div class="slide" data-slide="13" data-type="content">
+                    <h2>Branching: Experiment Safely</h2>
+                    <div class="content">
+                        <img src="images/computer-programmer-students.jpg" alt="Three students collaborating at a computer" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+                        
+                        
+                        
+                        <p>A <strong>branch</strong> is a separate version of your code where you can experiment without affecting the working code.</p>
+
+                        <h3>Why Use Branches?</h3>
+                        <ul>
+                            <li>Try new features without breaking working code.</li>
+                            <li>Work on multiple features at the same time.</li>
+                            <li>Keep your main branch clean and working.</li>
+                            <li>Industry standard practice.</li>
+                        </ul>
+
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; clear: both;">
+                            <strong>Analogy:</strong> Think of branches like save files in a video game. The main branch is your primary save. Other branches let you try different strategies without losing your progress.
+                        </div>
+
+                        <div class="branch-animation" aria-label="Animation showing how branches work">
+                            <h3>How Branches Work</h3>
+                            <div class="branch-diagram">
+                                <div class="branch-line main-line">
+                                    <div class="branch-commit">C1</div>
+                                    <div class="branch-commit">C2</div>
+                                    <div class="branch-commit">C5</div>
+                                    <div class="branch-label">main</div>
+                                </div>
+                                <div class="branch-line feature-line">
+                                    <div class="branch-commit branch-start">C2</div>
+                                    <div class="branch-commit">C3</div>
+                                    <div class="branch-commit">C4</div>
+                                    <div class="branch-label">feature-login</div>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 15px; font-size: 14px;">The feature branch splits off from main, gets new commits, then can be merged back.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 14: Quiz Question 4 -->
+                <div class="slide" data-slide="14" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>Why should you use branches?</strong></p>
+                            <label><input type="radio" name="q4" value="a"> To make your repository look more professional.</label>
+                            <label><input type="radio" name="q4" value="b"> Branches are required by GitHub.</label>
+                            <label><input type="radio" name="q4" value="c"> To experiment with new features without breaking your main code.</label>
+                            <label><input type="radio" name="q4" value="d"> To delete old code.</label>
+                            <div class="feedback" id="feedback-q4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 15: Forking -->
+                <div class="slide" data-slide="15" data-type="content">
+                    <h2>Forking vs. Cloning</h2>
+                    <div class="content">
+                        <img src="images/business-women.jpg" alt="Two women having a professional discussion" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+                        
+                        
+                        
+                        <p>Students often get confused between forking and cloning. Here's the difference:</p>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 20px 0; border-radius: 8px; clear: both;">
+                            <h3>Cloning</h3>
+                            <ul>
+                                <li>Downloads a copy to your computer.</li>
+                                <li>You can make changes locally.</li>
+                                <li>If you have permission, you can push changes back.</li>
+                                <li>Used for your own repositories or team projects.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background-color: #e7f3ff; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                            <h3>Forking</h3>
+                            <ul>
+                                <li>Creates a copy of someone else's repository under YOUR GitHub account.</li>
+                                <li>You own this copy and can do whatever you want with it.</li>
+                                <li>Used when you want to contribute to someone else's project.</li>
+                                <li>You can suggest changes back via "pull requests".</li>
+                            </ul>
+                        </div>
+
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <strong>Real Example:</strong> Your instructor posts starter code. You fork it to your account, clone it to your computer, complete the assignment, commit and push to YOUR fork, then share the link with your instructor.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 16: Quiz Question 5 -->
+                <div class="slide" data-slide="16" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What is the difference between forking and cloning?</strong></p>
+                            <label><input type="radio" name="q5" value="a"> They are the same thing.</label>
+                            <label><input type="radio" name="q5" value="b"> Forking creates a copy on GitHub under your account; cloning downloads to your computer.</label>
+                            <label><input type="radio" name="q5" value="c"> Cloning is for public repos; forking is for private repos.</label>
+                            <label><input type="radio" name="q5" value="d"> Forking is faster than cloning.</label>
+                            <div class="feedback" id="feedback-q5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 17: Sharing with Instructor and Classmates -->
+                <div class="slide" data-slide="17" data-type="content">
+                    <h2>Sharing Your Repository</h2>
+                    <div class="content">
+                        <img src="images/BeardedDragon_mouse.jpg" alt="Bearded dragon next to a computer mouse" style="float: right; width: 240px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+                        
+                        
+                        
+                        <h3>For Class Assignments</h3>
+                        
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                            <h4>Option 1: Share the Link (Public Repository)</h4>
+                            <ul>
+                                <li>Make sure your repository is public.</li>
+                                <li>Copy the URL from your browser.</li>
+                                <li>Submit it in D2L.</li>
+                            </ul>
+                            <p><strong>Example URL:</strong> https://github.com/yourusername/your-repo-name</p>
+                        </div>
+
+                        <div style="background-color: #fff3cd; padding: 20px; margin: 20px 0; border-radius: 8px; clear: both;">
+                            <h4>Option 2: Add Collaborators (Private Repository)</h4>
+                            <p>If you want to keep your repo private, you can give your instructor access by adding them as a collaborator in your repository settings.</p>
+                        </div>
+
+                        <h3>For Group Projects</h3>
+                        <ul>
+                            <li>One person creates the repository.</li>
+                            <li>They add team members as collaborators.</li>
+                            <li>Everyone clones the same repository.</li>
+                            <li>Use branches for different features.</li>
+                            <li>Merge branches when features are complete.</li>
+                        </ul>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <strong>Pro Tip:</strong> Always include a README.md that explains how to run your project. Your instructor (and future employers) will appreciate it!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 18: Quiz Question 6 (True/False) -->
+                <div class="slide" data-slide="18" data-type="quiz">
+                    <h2>Quick Check: True or False</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>True or False: You can make a repository private and still share it with your instructor.</strong></p>
+                            <label><input type="radio" name="q6" value="true"> True</label>
+                            <label><input type="radio" name="q6" value="false"> False</label>
+                            <div class="feedback" id="feedback-q6"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 19: Tips for Success -->
+                <div class="slide" data-slide="19" data-type="content">
+                    <h2>Tips for GitHub Success</h2>
+                    <div class="content">
+                        <img src="images/developer-writing-documentation.jpg" alt="Developer writing notes while working on laptop" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+                        
+                        
+                        
+                        <h3>Yes, GitHub is Hard at First</h3>
+                        <p>Let's be honest: GitHub has a steep learning curve. But here's why you should push through:</p>
+                        
+                        <p style="clear: both;">It's an industry standard. Over a million developers use GitHub. It's also a career boost, since employers expect you to have a GitHub profile. You can use GitHub as a portfolio of your work. Your repos are proof of your skills. GitHub allows you to collaborate and work in teams. Finally, Microsoft, which is the second biggest software company in the world, owns GitHub and continues investing in it.</p>
+
+                        <h3 style="clear: both;">Common Mistakes to Avoid</h3>
+                        <div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <ul>
+                                <li>Forgetting to commit before closing your computer.</li>
+                                <li>Not pulling before you start working (gets you out of sync).</li>
+                                <li>Committing passwords or API keys.</li>
+                                <li>Vague commit messages like "fixed stuff".</li>
+                                <li>Working directly on main instead of using branches.</li>
+                            </ul>
+                        </div>
+
+                        <h3>Best Practices</h3>
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <ul>
+                                <li>Commit early and often.</li>
+                                <li>Write clear commit messages.</li>
+                                <li>Pull before you push.</li>
+                                <li>Use .gitignore for files you don't want tracked.</li>
+                                <li>Keep your README up to date.</li>
+                                <li>Don't be afraid to ask for help.</li>
+                            </ul>
+                        </div>
+
+                        <p><strong>Remember:</strong> Every professional developer struggled with Git at first. You're not alone. Keep practicing, and it will become second nature!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 20: Quiz Question 7 -->
+                <div class="slide" data-slide="20" data-type="quiz">
+                    <h2>Quick Check</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>Which of these is a best practice for Git commit messages?</strong></p>
+                            <label><input type="radio" name="q7" value="a"> "Updated files"</label>
+                            <label><input type="radio" name="q7" value="b"> "Fixed bug in login validation"</label>
+                            <label><input type="radio" name="q7" value="c"> "Stuff"</label>
+                            <label><input type="radio" name="q7" value="d"> "Changes"</label>
+                            <div class="feedback" id="feedback-q7"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 21: Conclusion -->
+                <div class="slide" data-slide="21" data-type="content">
+                    <h2>Congratulations!</h2>
+                    <div class="content">
+                        <img src="images/developers-coding.jpg" alt="Developers collaborating on code together" style="float: right; width: 340px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+
+
+                        <p>You've completed the Introduction to GitHub and Version Control lesson!</p>
+
+                        <h3>What You Learned</h3>
+                        <ul>
+                            <li>What GitHub is and why it's the industry standard.</li>
+                            <li>How version control works.</li>
+                            <li>What repositories are and how to use them.</li>
+                            <li>The difference between branching and forking.</li>
+                            <li>How to share your repositories.</li>
+                        </ul>
+
+                        <p><strong>Remember:</strong> GitHub gets easier with practice. Don't give up! Every commit you make builds your skills and your professional portfolio.</p>
+
+                        <p><strong>This is your instructor, Dr. Mary Lebens, signing off. Have a great day.</strong></p>
+
+                        <div style="background-color: #d4edda; padding: 20px; border-radius: 8px; margin: 20px 0; clear: both;">
+                            <h3>Additional Resources</h3>
+                            <ul>
+                                <li><a href="https://docs.github.com/en/get-started" target="_blank" rel="noopener noreferrer">GitHub Official Documentation</a></li>
+                                <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Developer Pack</a> (Free premium features!)</li>
+                                <li><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener noreferrer">Interactive Git Tutorial</a></li>
+                            </ul>
+                        </div>
+
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107; font-style: italic;">
+                            <strong>Final thought:</strong> Remember, there are only 10 types of people in the world. Those who understand binary, and those who don't. 😄
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 22: Score Report -->
+                <div class="slide" data-slide="22" data-type="score">
+                    <h2>Your Score Report</h2>
+                    <div class="content">
+                        <div id="scoreReport">
+                            <p>Click the button below to see your final score.</p>
+                            <button onclick="generateScoreReport()" class="check-button">View Score Report</button>
+                            <div id="scoreResults" style="display: none;">
+                                <div id="scoreDisplay"></div>
+                                <div id="scoreBreakdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 23: Credits -->
+                <div class="slide" data-slide="23" data-type="credits">
+                    <h2>Credits</h2>
+                    <div class="content">
+                        
+                        
+                        <div class="credits-container">
+                            <div class="credits-scroll">
+                                <div class="credits-section">
+                                    <p><strong>Text by:</strong> Dr. Mary Lebens</p>
+                                    <p>Minneapolis College</p>
+                                </div>
+
+                                <div class="credits-section">
+                                    <h3>Images</h3>
+                                    <p>Licensed under Creative Commons License 0</p>
+                                    <p>Retrieved from: <a href="https://www.publicdomainpictures.net/en/" target="_blank" rel="noopener noreferrer">Public Domain Pictures - Free Images & Stock Photos for Commercial Use</a></p>
+                                </div>
+
+                                <div class="credits-section">
+                                    <h3>Video</h3>
+                                    <p>"A brief introduction to Git for beginners" by GitHub</p>
+                                    <p><a href="https://www.youtube.com/watch?v=r8jQ9hVA2qs&list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f" target="_blank" rel="noopener noreferrer">YouTube Link</a></p>
+                                </div>
+
+                                <div class="credits-section">
+                                    <h3>Music</h3>
+                                    <p><strong>Artist:</strong> Alex Beroza</p>
+                                    <p><strong>Song:</strong> All As One</p>
+                                    <p><strong>Composer:</strong> Alex Beroza</p>
+                                    <p><strong>Produced by:</strong> Alex Beroza, Snowflake, Patronski, stellarartworks</p>
+                                    <p><strong>Copyright:</strong> ArtisTech Media</p>
+                                    <p><a href="https://dig.ccmixter.org/files/AlexBeroza/55220" target="_blank" rel="noopener noreferrer">dig.ccmixter.org/files/AlexBeroza/55220</a></p>
+                                    <p>(c) copyright 2016 Licensed under a Creative Commons Attribution Noncommercial (3.0) license.</p>
+                                </div>
+
+                                <div class="credits-section">
+                                    <h3>License</h3>
+                                    <p><strong>This lesson is licensed under Creative Commons and can be re-used by other educators at non-profit institutions.</strong></p>
+                                    <p style="margin-top: 15px;"><strong>CC BY-NC-SA 4.0</strong></p>
+                                    <p>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</p>
+                                </div>
+
+                                <div class="credits-section">
+                                    <p>This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only. If others modify or adapt the material, they must license the modified material under identical terms.</p>
+                                </div>
+
+                                <div class="credits-section">
+                                    <p><strong>BY:</strong> Credit must be given to you, the creator.</p>
+                                    <p><strong>NC:</strong> Only noncommercial use of your work is permitted. Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</p>
+                                    <p><strong>SA:</strong> Adaptations must be shared under the same terms.</p>
+                                </div>
+
+                                <div class="credits-section">
+                                    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">See the License Deed</a></p>
+                                </div>
+
+                                <div class="credits-section" style="margin-top: 40px;">
+                                    <p style="font-size: 20px; font-weight: bold;">Thank you for learning with us!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <footer>
+            <div class="navigation">
+                <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+                <span id="slideIndicator" aria-live="polite">Slide 1 of 18</span>
+                <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Email Score Report</h3>
+                <span class="close" onclick="closeEmailModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <label for="studentEmail">Enter your email address:</label>
+                <input type="email" id="studentEmail" placeholder="your.email@example.com" required>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeEmailModal()" class="secondary-button">Cancel</button>
+                <button onclick="sendScoreEmail()" class="primary-button">Send Email</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
