@@ -1,19 +1,54 @@
-// GitHub Lesson JavaScript
+// AI Fundamentals Lesson JavaScript
 let currentSlide = 1;
-const totalSlides = 23; // Updated from 19 to 23 (added 4 new quiz slides)
+const totalSlides = 46; // Total number of slides including all content, quizzes, score report, and credits
 
-// Audio mapping for persistent player
+// Audio mapping for slides with audio narration
+// Placeholders for all non-quiz slides (quiz slides don't have audio)
 const slideAudioMap = {
-    1: './audio/slide1.mp3',    // Welcome
-    2: './audio/slide2.mp3',    // What is GitHub
-    4: './audio/slide4.mp3',    // Version Control
-    11: './audio/slide7.mp3',   // Repositories (was slide 7)
-    13: './audio/slide10.mp3',  // Branching - uses slide10.mp3
-    15: './audio/slide11.mp3',  // Forking (was slide 11)
-    17: './audio/slide13.mp3',  // Sharing (was slide 13)
-    19: './audio/slide15.mp3',  // Tips for Success (was slide 15)
-    21: './audio/slide18.mp3',  // Conclusion
-    23: './audio/slide19.mp3'   // Credits
+    1: './audio/slide01.mp3',   // Welcome
+    2: './audio/slide02.mp3',   // What is AI?
+    3: './audio/slide03.mp3',   // AI Basics
+    4: './audio/slide04.mp3',   // Types of AI Tools
+    // Slides 5-6 are Quiz 1-2
+    7: './audio/slide07.mp3',   // Microsoft Copilot Intro
+    8: './audio/slide08.mp3',   // What is Copilot?
+    9: './audio/slide09.mp3',   // How Copilot Helps
+    10: './audio/slide10.mp3',  // Accessing Copilot
+    11: './audio/slide11.mp3',  // Copilot Interface
+    // Slides 12-13 are Quiz 3-4
+    14: './audio/slide14.mp3',  // Using Copilot for Python
+    15: './audio/slide15.mp3',  // First Conversation
+    16: './audio/slide16.mp3',  // Try It Yourself #1
+    17: './audio/slide17.mp3',  // Code Help: Variables
+    18: './audio/slide18.mp3',  // Code Help: Print
+    19: './audio/slide19.mp3',  // Code Help: Input
+    20: './audio/slide20.mp3',  // Code Help: Math
+    21: './audio/slide21.mp3',  // Writing Good Prompts
+    // Slide 22 is Quiz 5
+    23: './audio/slide23.mp3',  // Evaluating AI Output
+    24: './audio/slide24.mp3',  // AI Isn't Perfect
+    25: './audio/slide25.mp3',  // How to Check Code
+    // Slide 26 is Quiz 6
+    27: './audio/slide27.mp3',  // When to Use AI
+    // Slide 28 is Quiz 7
+    29: './audio/slide29.mp3',  // AI Ethics Intro
+    30: './audio/slide30.mp3',  // Using AI Responsibly
+    31: './audio/slide31.mp3',  // CHECK YOUR SYLLABUS!
+    // Slide 32 is Quiz 8
+    33: './audio/slide33.mp3',  // How to Cite AI
+    // Slide 34 is Quiz 9
+    35: './audio/slide35.mp3',  // Privacy and Security
+    // Slide 36 is Quiz 10
+    37: './audio/slide37.mp3',  // Practice & Application
+    38: './audio/slide38.mp3',  // Try It Yourself #2
+    // Slide 39 is Quiz 11
+    40: './audio/slide40.mp3',  // Common Mistakes
+    // Slide 41 is Quiz 12
+    42: './audio/slide42.mp3',  // Summary
+    43: './audio/slide43.mp3',  // Key Takeaways
+    44: './audio/slide44.mp3',  // Resources
+    45: './audio/slide45.mp3',  // Score Report
+    46: './audio/slide46.mp3'   // Credits
 };
 
 // Track visited slides for progress
@@ -22,33 +57,27 @@ let visitedSlides = new Set([1]); // Start with slide 1 as visited
 // Persistent audio player element
 let persistentAudio = null;
 
-// Quiz answers
+// Quiz answers - All 12 quiz questions
 const quizAnswers = {
-    q1: 'c', // Microsoft
-    q2: 'b', // Track changes and collaborate safely
-    q4: 'c', // To experiment without breaking main code
-    q5: 'b', // Forking creates copy on GitHub; cloning downloads
-    q6: 'true', // Can share private repo with instructor
-    q7: 'b',  // Clear commit messages
-    q8: 'c', // git add stages files
-    q9: 'b', // git commit saves snapshot
-    q10: 'a' // git push uploads to GitHub
+    q1: 'b',   // Which is an example of AI? Answer: Voice assistant like Siri/Alexa
+    q2: 'b',   // How does AI get better? Answer: By seeing lots of examples
+    q3: 'b',   // What website for Copilot? Answer: copilot.microsoft.com
+    q4: 'b',   // What account to login? Answer: StarID@go.minneapolis.edu
+    q5: 'b',   // Better prompt? Answer: "Write Python code to print my name"
+    q6: 'b',   // When you READ code, what are you checking? Answer: Do I understand what it does?
+    q7: 'b',   // What to do with AI code? Answer: Read, test, understand it
+    q8: 'b',   // Not sure about AI policy? Answer: Check syllabus and ask instructor
+    q9: 'b',   // Should you mention using Copilot? Answer: Yes, cite how you used it
+    q10: 'b',  // Never share with AI? Answer: Your password
+    q11: 'c',  // Copilot code has error? Answer: Read code carefully to find mistake
+    q12: 'b'   // Best way to use Copilot? Answer: Understand examples, then practice
 };
-
-// Matching quiz answers
-const matchingAnswers = {
-    match1: 'b', // Repository - folder containing project and history
-    match2: 'a', // Commit - snapshot of project
-    match3: 'c'  // Main branch - main development branch
-};
-
-// Ordering quiz answer (correct order for git workflow)
-const correctOrder = ['stage', 'commit', 'push'];
 
 // Track answered questions
 const answeredQuestions = {
     q1: false,
     q2: false,
+    q3: false,
     q4: false,
     q5: false,
     q6: false,
@@ -56,8 +85,8 @@ const answeredQuestions = {
     q8: false,
     q9: false,
     q10: false,
-    matching: false,
-    ordering: false
+    q11: false,
+    q12: false
 };
 
 // Initialize when page loads
@@ -65,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSlideDisplay();
     updateProgressBar();
     setupQuizListeners();
-    setupOrderingQuiz();
     updateMenuHighlight();
     initializePersistentAudioPlayer();
 
@@ -105,21 +133,21 @@ function updateAudioForSlide(slideNum) {
 // Go to specific slide
 function goToSlide(slideNum) {
     const slides = document.querySelectorAll('.slide');
-    
+
     if (slideNum < 1 || slideNum > totalSlides) return;
-    
+
     // Hide current slide
     slides[currentSlide - 1].classList.remove('active');
-    
+
     // Update slide number
     currentSlide = slideNum;
-    
+
     // Show new slide
     slides[currentSlide - 1].classList.add('active');
-    
+
     // Reset animations on the new slide
     resetAnimations(slides[currentSlide - 1]);
-    
+
     // Update display
     updateSlideDisplay();
     updateProgressBar();
@@ -142,34 +170,6 @@ function goToSlide(slideNum) {
 
 // Reset animations when a slide becomes active
 function resetAnimations(slide) {
-    // Reset commit animation
-    const commitNodes = slide.querySelectorAll('.commit-node');
-    const commitArrows = slide.querySelectorAll('.commit-arrow');
-    
-    commitNodes.forEach(function(node) {
-        node.style.animation = 'none';
-        setTimeout(function() {
-            node.style.animation = '';
-        }, 10);
-    });
-    
-    commitArrows.forEach(function(arrow) {
-        arrow.style.animation = 'none';
-        setTimeout(function() {
-            arrow.style.animation = '';
-        }, 10);
-    });
-    
-    // Reset branch animation
-    const branchCommits = slide.querySelectorAll('.branch-commit');
-    
-    branchCommits.forEach(function(commit) {
-        commit.style.animation = 'none';
-        setTimeout(function() {
-            commit.style.animation = '';
-        }, 10);
-    });
-    
     // Reset credits scroll
     const creditsScroll = slide.querySelector('.credits-scroll');
     if (creditsScroll) {
@@ -204,14 +204,14 @@ function updateSlideDisplay() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const indicator = document.getElementById('slideIndicator');
-    
+
     // Update indicator
     indicator.textContent = `Slide ${currentSlide} of ${totalSlides}`;
-    
+
     // Update button states
     prevBtn.disabled = (currentSlide === 1);
     nextBtn.disabled = (currentSlide === totalSlides);
-    
+
     // Change button text on last slide
     if (currentSlide === totalSlides) {
         nextBtn.textContent = 'Finish';
@@ -233,7 +233,7 @@ function updateMenuHighlight() {
     // Remove active class from all menu items
     const menuItems = document.querySelectorAll('.sidebar-menu a');
     menuItems.forEach(item => item.classList.remove('active'));
-    
+
     // Add active class to current menu item (only for content slides in menu)
     const currentMenuItem = document.getElementById('nav-' + currentSlide);
     if (currentMenuItem) {
@@ -251,7 +251,8 @@ function trackProgress() {
     // Only set incomplete status if not already passed/failed
     // Don't override the final status once set
     const currentStatus = scorm.get('cmi.core.lesson_status');
-    if (currentSlide < 21 && currentStatus !== 'passed' && currentStatus !== 'failed' && currentStatus !== 'completed') {
+    const scoreSlideNum = totalSlides - 1; // Typically score slide is second to last
+    if (currentSlide < scoreSlideNum && currentStatus !== 'passed' && currentStatus !== 'failed' && currentStatus !== 'completed') {
         scorm.setIncomplete();
     }
 
@@ -263,8 +264,9 @@ function trackProgress() {
 
 // Set up quiz question listeners
 function setupQuizListeners() {
-    const questions = ['q1', 'q2', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
-    
+    // All 12 quiz questions
+    const questions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12'];
+
     questions.forEach(function(questionName) {
         const radios = document.getElementsByName(questionName);
         radios.forEach(function(radio) {
@@ -279,7 +281,7 @@ function setupQuizListeners() {
 function checkAnswer(question, answer) {
     const feedbackDiv = document.getElementById('feedback-' + question);
     const correctAnswer = quizAnswers[question];
-    
+
     if (answer === correctAnswer) {
         feedbackDiv.className = 'feedback correct';
         feedbackDiv.textContent = '✓ Correct!';
@@ -291,122 +293,9 @@ function checkAnswer(question, answer) {
     }
 }
 
-// Check matching answers
-function checkMatching() {
-    let allCorrect = true;
-    let score = 0;
-    
-    for (let key in matchingAnswers) {
-        const select = document.getElementById(key);
-        const selectedValue = select.value;
-        const correctValue = matchingAnswers[key];
-        
-        if (selectedValue === correctValue) {
-            score++;
-            select.style.borderColor = '#28a745';
-            select.style.backgroundColor = '#d4edda';
-        } else {
-            allCorrect = false;
-            select.style.borderColor = '#dc3545';
-            select.style.backgroundColor = '#f8d7da';
-        }
-    }
-    
-    const feedbackDiv = document.getElementById('feedback-matching');
-    
-    if (allCorrect) {
-        feedbackDiv.className = 'feedback correct';
-        feedbackDiv.textContent = '✓ Perfect! All matches are correct!';
-        answeredQuestions.matching = true;
-    } else {
-        feedbackDiv.className = 'feedback incorrect';
-        feedbackDiv.textContent = `✗ You got ${score} out of 3 correct. Please try again.`;
-        answeredQuestions.matching = false;
-    }
-}
-
-// Setup drag and drop for ordering quiz
-function setupOrderingQuiz() {
-    const container = document.getElementById('orderingContainer');
-    if (!container) return;
-    
-    let draggedElement = null;
-    
-    const items = container.querySelectorAll('.ordering-item');
-    items.forEach(item => {
-        item.addEventListener('dragstart', function(e) {
-            draggedElement = this;
-            this.classList.add('dragging');
-            e.dataTransfer.effectAllowed = 'move';
-        });
-        
-        item.addEventListener('dragend', function() {
-            this.classList.remove('dragging');
-        });
-        
-        item.addEventListener('dragover', function(e) {
-            e.preventDefault();
-            e.dataTransfer.dropEffect = 'move';
-            
-            const afterElement = getDragAfterElement(container, e.clientY);
-            if (afterElement == null) {
-                container.appendChild(draggedElement);
-            } else {
-                container.insertBefore(draggedElement, afterElement);
-            }
-        });
-    });
-}
-
-function getDragAfterElement(container, y) {
-    const draggableElements = [...container.querySelectorAll('.ordering-item:not(.dragging)')];
-    
-    return draggableElements.reduce((closest, child) => {
-        const box = child.getBoundingClientRect();
-        const offset = y - box.top - box.height / 2;
-        
-        if (offset < 0 && offset > closest.offset) {
-            return { offset: offset, element: child };
-        } else {
-            return closest;
-        }
-    }, { offset: Number.NEGATIVE_INFINITY }).element;
-}
-
-// Check ordering quiz
-function checkOrdering() {
-    const container = document.getElementById('orderingContainer');
-    const items = container.querySelectorAll('.ordering-item');
-    const currentOrder = [];
-    
-    items.forEach(item => {
-        currentOrder.push(item.dataset.step);
-    });
-    
-    const feedbackDiv = document.getElementById('feedback-ordering');
-    
-    let isCorrect = true;
-    for (let i = 0; i < correctOrder.length; i++) {
-        if (currentOrder[i] !== correctOrder[i]) {
-            isCorrect = false;
-            break;
-        }
-    }
-    
-    if (isCorrect) {
-        feedbackDiv.className = 'feedback correct';
-        feedbackDiv.textContent = '✓ Perfect! You have the steps in the correct order!';
-        answeredQuestions.ordering = true;
-    } else {
-        feedbackDiv.className = 'feedback incorrect';
-        feedbackDiv.textContent = '✗ Not quite right. Think about the workflow: you prepare changes locally, save them, then share them with GitHub.';
-        answeredQuestions.ordering = false;
-    }
-}
-
 // Generate score report
 function generateScoreReport() {
-    let totalQuestions = 11; // 8 multiple choice + 1 matching + 1 ordering + 1 true/false
+    let totalQuestions = 12; // Total quiz questions in AI Fundamentals lesson
     let correctAnswers = 0;
 
     // Get display elements
@@ -447,7 +336,7 @@ function generateScoreReport() {
 
     // Display results
     resultsDiv.style.display = 'block';
-    
+
     // Store score data for email/print
     window.scoreData = {
         correct: correctAnswers,
@@ -457,7 +346,7 @@ function generateScoreReport() {
         date: new Date().toLocaleDateString(),
         breakdown: answeredQuestions
     };
-    
+
     // Score display
     if (passed) {
         displayDiv.className = 'pass';
@@ -480,29 +369,30 @@ function generateScoreReport() {
         scorm.setFailed();  // Set status to "failed"
         scorm.save();       // Save AFTER setting all values
     }
-    
+
     // Breakdown
     breakdownDiv.innerHTML = '<h3>Question Breakdown</h3>';
-    
+
     const questionLabels = {
-        q1: 'Question 1: What company owns GitHub?',
-        q2: 'Question 2: Purpose of version control?',
-        matching: 'Question 3: Match the terms',
-        q4: 'Question 4: Why use branches?',
-        q5: 'Question 5: Forking vs. cloning?',
-        q6: 'Question 6: Share private repository?',
-        ordering: 'Question 7: Order the Git workflow steps',
-        q8: 'Question 8: What does git add do?',
-        q9: 'Question 9: What does git commit do?',
-        q10: 'Question 10: What does git push do?',
-        q7: 'Question 11: Best commit message practice?'
+        q1: 'Question 1: Example of AI',
+        q2: 'Question 2: How AI learns',
+        q3: 'Question 3: Copilot website',
+        q4: 'Question 4: Login account',
+        q5: 'Question 5: Better prompt',
+        q6: 'Question 6: Checking code',
+        q7: 'Question 7: Using AI-generated code',
+        q8: 'Question 8: AI policy uncertainty',
+        q9: 'Question 9: Citing AI assistance',
+        q10: 'Question 10: Privacy and security',
+        q11: 'Question 11: Code with errors',
+        q12: 'Question 12: Best way to use Copilot'
     };
-    
+
     for (let key in answeredQuestions) {
         const isCorrect = answeredQuestions[key];
         const itemClass = isCorrect ? 'correct' : 'incorrect';
         const icon = isCorrect ? '✓' : '✗';
-        
+
         breakdownDiv.innerHTML += `
             <div class="score-item ${itemClass}">
                 <span>${questionLabels[key]}</span>
@@ -510,7 +400,7 @@ function generateScoreReport() {
             </div>
         `;
     }
-    
+
     // Add action buttons
     breakdownDiv.innerHTML += `
         <div class="score-actions">
@@ -522,7 +412,7 @@ function generateScoreReport() {
 
     // Scroll to results
     resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    
+
     console.log(`Quiz completed: ${correctAnswers}/${totalQuestions} (${percentage}%)`);
 }
 
@@ -536,17 +426,18 @@ function printScoreReport() {
 
     // Question labels for breakdown
     const questionLabels = {
-        q1: 'Question 1: What company owns GitHub?',
-        q2: 'Question 2: Purpose of version control?',
-        matching: 'Question 3: Match the terms',
-        q4: 'Question 4: Why use branches?',
-        q5: 'Question 5: Forking vs. cloning?',
-        q6: 'Question 6: Share private repository?',
-        ordering: 'Question 7: Order the Git workflow steps',
-        q8: 'Question 8: What does git add do?',
-        q9: 'Question 9: What does git commit do?',
-        q10: 'Question 10: What does git push do?',
-        q7: 'Question 11: Best commit message practice?'
+        q1: 'Question 1: Example of AI',
+        q2: 'Question 2: How AI learns',
+        q3: 'Question 3: Copilot website',
+        q4: 'Question 4: Login account',
+        q5: 'Question 5: Better prompt',
+        q6: 'Question 6: Checking code',
+        q7: 'Question 7: Using AI-generated code',
+        q8: 'Question 8: AI policy uncertainty',
+        q9: 'Question 9: Citing AI assistance',
+        q10: 'Question 10: Privacy and security',
+        q11: 'Question 11: Code with errors',
+        q12: 'Question 12: Best way to use Copilot'
     };
 
     // Build breakdown HTML
@@ -565,8 +456,8 @@ function printScoreReport() {
     printableDiv.innerHTML = `
         <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto;">
             <h1 style="color: #4a148c; border-bottom: 3px solid #4a148c; padding-bottom: 10px;">Score Report</h1>
-            <h2 style="color: #666;">Introduction to GitHub and Version Control</h2>
-            <p style="color: #888; margin-bottom: 30px;">Minneapolis College</p>
+            <h2 style="color: #666;">AI Fundamentals: Using Microsoft Copilot for Python</h2>
+            <p style="color: #888; margin-bottom: 30px;">Minnesota State</p>
 
             <div style="background: ${window.scoreData.passed ? '#d4edda' : '#f8d7da'}; padding: 20px; margin: 20px 0; border-radius: 8px; border: 2px solid ${window.scoreData.passed ? '#28a745' : '#dc3545'};">
                 <h2 style="margin-top: 0; color: ${window.scoreData.passed ? '#155724' : '#721c24'};">
@@ -575,7 +466,7 @@ function printScoreReport() {
                 <p style="font-size: 18px; margin: 10px 0;"><strong>Score:</strong> ${window.scoreData.correct} out of ${window.scoreData.total} (${window.scoreData.percentage}%)</p>
                 <p style="font-size: 14px; margin: 10px 0;"><strong>Date:</strong> ${window.scoreData.date}</p>
                 <p style="font-size: 14px; margin: 10px 0;">${window.scoreData.passed ?
-                    'Congratulations! You have successfully completed the GitHub lesson.' :
+                    'Congratulations! You have successfully completed the lesson.' :
                     'You need at least 70% to pass. Please review the material and retake the quiz.'}</p>
             </div>
 
@@ -585,7 +476,7 @@ function printScoreReport() {
             </div>
 
             <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #888; font-size: 12px;">
-                <p>This is an automated score report from the GitHub lesson SCORM package.</p>
+                <p>This is an automated score report from the lesson SCORM package.</p>
             </div>
         </div>
     `;
@@ -606,7 +497,7 @@ function printScoreReport() {
 function showEmailModal() {
     const modal = document.getElementById('emailModal');
     modal.style.display = 'block';
-    
+
     // Focus on email input
     document.getElementById('studentEmail').focus();
 }
@@ -621,38 +512,38 @@ function closeEmailModal() {
 // Send email with score report
 function sendScoreEmail() {
     const email = document.getElementById('studentEmail').value;
-    
+
     if (!email || !email.includes('@')) {
         alert('Please enter a valid email address.');
         return;
     }
-    
-    const subject = 'GitHub Lesson Score Report';
-    const body = `GitHub and Version Control Lesson - Score Report
+
+    const subject = 'AI Fundamentals: Using Microsoft Copilot for Python - Score Report';
+    const body = `AI Fundamentals: Using Microsoft Copilot for Python - Score Report
 
 Date: ${window.scoreData.date}
 Score: ${window.scoreData.correct} out of ${window.scoreData.total} (${window.scoreData.percentage}%)
 Result: ${window.scoreData.passed ? 'PASSED' : 'NOT PASSED'}
 
-${window.scoreData.passed ? 
-    'Congratulations! You have successfully completed the GitHub lesson.' :
+${window.scoreData.passed ?
+    'Congratulations! You have successfully completed the lesson.' :
     'You need at least 70% to pass. Please review the material and retake the quiz.'}
 
-Course: Introduction to GitHub and Version Control
-Institution: Minneapolis College
+Course: Introduction to Python Programming
+Institution: Minnesota State
 
 ---
-This is an automated message from the GitHub lesson SCORM package.`;
-    
+This is an automated message from the lesson SCORM package.`;
+
     // Create mailto link
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
+
     // Open email client
     window.location.href = mailtoLink;
-    
+
     // Close modal
     closeEmailModal();
-    
+
     // Show confirmation
     alert(`An email draft has been created. Please send it from your email client to: ${email}`);
 }
@@ -668,7 +559,7 @@ window.onclick = function(event) {
 // Resume from bookmark if available
 window.addEventListener('load', function() {
     const bookmark = scorm.get('cmi.core.lesson_location');
-    
+
     if (bookmark && bookmark !== '') {
         const savedSlide = parseInt(bookmark);
         if (savedSlide > 1 && savedSlide <= totalSlides) {
@@ -680,10 +571,6 @@ window.addEventListener('load', function() {
         }
     }
 });
-
-// Toggle audio playback
-// Removed toggleAudio - replaced with persistent audio player (WCAG 2.1 AA compliant)
-
 
 // ============================================
 // CERTIFICATE GENERATION
@@ -722,7 +609,7 @@ function generateCertificate() {
     // Subtitle
     ctx.font = '32px Arial';
     ctx.fillStyle = '#4a5568';
-    ctx.fillText('Introduction to GitHub and Version Control', 600, 220);
+    ctx.fillText('AI Fundamentals: Using Microsoft Copilot for Python', 600, 220);
 
     // Student name
     if (!window.studentName) {
@@ -741,29 +628,9 @@ function generateCertificate() {
 
     // Download
     const link = document.createElement('a');
-    link.download = 'GitHub-Certificate.png';
+    link.download = 'AI-Fundamentals-Certificate.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
-}
-
-// ============================================
-// LIGHTBOX FUNCTIONALITY
-// ============================================
-function showLightbox(title, content) {
-    const existing = document.querySelector('.lightbox');
-    if (existing) existing.remove();
-
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox';
-    lightbox.innerHTML = '<div class="lightbox-content"><button class="close-lightbox">&times;</button><h3>' + title + '</h3><div>' + content + '</div></div>';
-    document.body.appendChild(lightbox);
-
-    lightbox.querySelector('.close-lightbox').onclick = function() {
-        lightbox.remove();
-    };
-    lightbox.onclick = function(e) {
-        if (e.target === lightbox) lightbox.remove();
-    };
 }
 
 // ============================================
