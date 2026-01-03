@@ -1,6 +1,6 @@
 // AI Fundamentals Lesson JavaScript
 let currentSlide = 1;
-const totalSlides = 46; // Total number of slides including all content, quizzes, score report, and credits
+const totalSlides = 37; // Total number of slides including all content, quizzes, score report, and credits
 
 // Audio mapping for slides with audio narration
 // Placeholders for all non-quiz slides (quiz slides don't have audio)
@@ -165,7 +165,7 @@ function goToSlide(slideNum) {
     trackProgress();
 
     // Generate score report when visiting slide 45
-    if (slideNum === 45) {
+    if (slideNum === 36) {
         generateScoreReport();
     }
 
