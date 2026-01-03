@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to GitHub and Version Control</title>
+    <title>AI Fundamentals: Using Microsoft Copilot for Python</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scorm_api_wrapper.js"></script>
     <script src="lesson.js"></script>
@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Introduction to GitHub and Version Control</h1>
+            <h1>AI Fundamentals: Using Microsoft Copilot for Python</h1>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
@@ -32,708 +32,1282 @@
 
                     <li class="has-submenu">
                         <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(2); return false;" id="nav-2">What is GitHub?</a>
+                            <a href="#" onclick="goToSlide(2); return false;" id="nav-2">What is AI?</a>
                             <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(3); return false;" id="nav-3">Quiz: What company owns GitHub?</a></li>
+                            <li><a href="#" onclick="goToSlide(3); return false;" id="nav-3">AI Basics</a></li>
+                            <li><a href="#" onclick="goToSlide(4); return false;" id="nav-4">Types of AI Tools</a></li>
+                            <li><a href="#" onclick="goToSlide(5); return false;" id="nav-5">Quiz 1</a></li>
+                            <li><a href="#" onclick="goToSlide(6); return false;" id="nav-6">Quiz 2</a></li>
                         </ul>
                     </li>
 
                     <li class="has-submenu">
                         <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(4); return false;" id="nav-4">Version Control</a>
+                            <a href="#" onclick="goToSlide(7); return false;" id="nav-7">Microsoft Copilot</a>
                             <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(5); return false;" id="nav-5">Quiz: Purpose of version control?</a></li>
+                            <li><a href="#" onclick="goToSlide(8); return false;" id="nav-8">What is Copilot?</a></li>
+                            <li><a href="#" onclick="goToSlide(9); return false;" id="nav-9">How Copilot Helps</a></li>
+                            <li><a href="#" onclick="goToSlide(10); return false;" id="nav-10">Accessing Copilot</a></li>
+                            <li><a href="#" onclick="goToSlide(11); return false;" id="nav-11">Copilot Interface</a></li>
+                            <li><a href="#" onclick="goToSlide(12); return false;" id="nav-12">Quiz 3</a></li>
+                            <li><a href="#" onclick="goToSlide(13); return false;" id="nav-13">Quiz 4</a></li>
                         </ul>
                     </li>
 
                     <li class="has-submenu">
                         <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(6); return false;" id="nav-6">Watch: Intro to Git</a>
+                            <a href="#" onclick="goToSlide(14); return false;" id="nav-14">Using Copilot for Python</a>
                             <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(7); return false;" id="nav-7">Quiz: What does git add do?</a></li>
-                            <li><a href="#" onclick="goToSlide(8); return false;" id="nav-8">Quiz: What does git commit do?</a></li>
-                            <li><a href="#" onclick="goToSlide(9); return false;" id="nav-9">Quiz: What does git push do?</a></li>
-                            <li><a href="#" onclick="goToSlide(10); return false;" id="nav-10">Quiz: Order the Git workflow</a></li>
+                            <li><a href="#" onclick="goToSlide(15); return false;" id="nav-15">Your First Prompt</a></li>
+                            <li><a href="#" onclick="goToSlide(16); return false;" id="nav-16">Try It Yourself #1</a></li>
+                            <li><a href="#" onclick="goToSlide(17); return false;" id="nav-17">Code Help: Variables</a></li>
+                            <li><a href="#" onclick="goToSlide(18); return false;" id="nav-18">Code Help: Print</a></li>
+                            <li><a href="#" onclick="goToSlide(19); return false;" id="nav-19">Code Help: Input</a></li>
+                            <li><a href="#" onclick="goToSlide(20); return false;" id="nav-20">Code Help: Math</a></li>
+                            <li><a href="#" onclick="goToSlide(21); return false;" id="nav-21">Writing Good Prompts</a></li>
+                            <li><a href="#" onclick="goToSlide(22); return false;" id="nav-22">Quiz 5</a></li>
                         </ul>
                     </li>
 
                     <li class="has-submenu">
                         <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(11); return false;" id="nav-11">Repositories</a>
+                            <a href="#" onclick="goToSlide(23); return false;" id="nav-23">Evaluating AI Output</a>
                             <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(12); return false;" id="nav-12">Quiz: Match the terms</a></li>
+                            <li><a href="#" onclick="goToSlide(24); return false;" id="nav-24">AI Isn't Perfect</a></li>
+                            <li><a href="#" onclick="goToSlide(25); return false;" id="nav-25">How to Check Code</a></li>
+                            <li><a href="#" onclick="goToSlide(26); return false;" id="nav-26">Quiz 6</a></li>
+                            <li><a href="#" onclick="goToSlide(27); return false;" id="nav-27">When to Use AI</a></li>
+                            <li><a href="#" onclick="goToSlide(28); return false;" id="nav-28">Quiz 7</a></li>
                         </ul>
                     </li>
 
                     <li class="has-submenu">
                         <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(13); return false;" id="nav-13">Branching</a>
+                            <a href="#" onclick="goToSlide(29); return false;" id="nav-29">AI Ethics & Academic Integrity</a>
                             <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(14); return false;" id="nav-14">Quiz: Why use branches?</a></li>
+                            <li><a href="#" onclick="goToSlide(30); return false;" id="nav-30">Using AI Responsibly</a></li>
+                            <li><a href="#" onclick="goToSlide(31); return false;" id="nav-31">Check Your Syllabus!</a></li>
+                            <li><a href="#" onclick="goToSlide(32); return false;" id="nav-32">Quiz 8</a></li>
+                            <li><a href="#" onclick="goToSlide(33); return false;" id="nav-33">How to Cite AI</a></li>
+                            <li><a href="#" onclick="goToSlide(34); return false;" id="nav-34">Quiz 9</a></li>
+                            <li><a href="#" onclick="goToSlide(35); return false;" id="nav-35">Privacy & Security</a></li>
+                            <li><a href="#" onclick="goToSlide(36); return false;" id="nav-36">Quiz 10</a></li>
                         </ul>
                     </li>
 
                     <li class="has-submenu">
                         <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(15); return false;" id="nav-15">Forking vs. Cloning</a>
+                            <a href="#" onclick="goToSlide(37); return false;" id="nav-37">Practice & Application</a>
                             <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(16); return false;" id="nav-16">Quiz: Forking vs. cloning?</a></li>
+                            <li><a href="#" onclick="goToSlide(38); return false;" id="nav-38">Try It Yourself #2</a></li>
+                            <li><a href="#" onclick="goToSlide(39); return false;" id="nav-39">Quiz 11</a></li>
+                            <li><a href="#" onclick="goToSlide(40); return false;" id="nav-40">Common Mistakes</a></li>
+                            <li><a href="#" onclick="goToSlide(41); return false;" id="nav-41">Quiz 12</a></li>
                         </ul>
                     </li>
 
                     <li class="has-submenu">
                         <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(17); return false;" id="nav-17">Sharing Your Work</a>
+                            <a href="#" onclick="goToSlide(42); return false;" id="nav-42">Summary & Resources</a>
                             <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(18); return false;" id="nav-18">Quiz: Share private repository?</a></li>
+                            <li><a href="#" onclick="goToSlide(43); return false;" id="nav-43">Key Takeaways</a></li>
+                            <li><a href="#" onclick="goToSlide(44); return false;" id="nav-44">Resources</a></li>
                         </ul>
                     </li>
 
-                    <li class="has-submenu">
-                        <div class="nav-item-with-toggle">
-                            <a href="#" onclick="goToSlide(19); return false;" id="nav-19">Tips for Success</a>
-                            <span class="toggle-icon" onclick="toggleSubmenu(this); event.stopPropagation(); return false;">▶</span>
-                        </div>
-                        <ul class="submenu">
-                            <li><a href="#" onclick="goToSlide(20); return false;" id="nav-20">Quiz: Best commit messages</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#" onclick="goToSlide(21); return false;" id="nav-21">Conclusion</a></li>
-                    <li><a href="#" onclick="goToSlide(22); return false;" id="nav-22">📊 Score Report</a></li>
-                    <li><a href="#" onclick="goToSlide(23); return false;" id="nav-23">Credits</a></li>
+                    <li><a href="#" onclick="goToSlide(45); return false;" id="nav-45">📊 Score Report</a></li>
+                    <li><a href="#" onclick="goToSlide(46); return false;" id="nav-46">Credits</a></li>
                 </ul>
             </nav>
 
             <main id="slideContainer" role="main">
-                <!-- Slide 1: Welcome -->
+
+                <!-- Slide 1: Welcome & Learning Objectives -->
                 <div class="slide active" data-slide="1" data-type="content">
-                    <h2>Welcome to GitHub Basics</h2>
+                    <h2>Welcome to AI Fundamentals!</h2>
                     <div class="content">
-                        <img src="images/computer-dog-44.jpg" alt="Corgi wearing glasses at a laptop with a succulent plant" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
-                        
-                        
-                        
-                        <p><strong>This is your instructor, Dr. Mary Lebens, coming to you live.</strong></p>
-                        
-                        <p>In this lesson, you'll learn about GitHub, the most popular development platform in the world. We'll cover:</p>
+                        <img src="images/ai-workspace.jpg" alt="Person working with AI technology on laptop" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>Hey there! Ready to learn about AI and how it can help you code? This lesson will introduce you to Artificial Intelligence and show you how to use Microsoft Copilot to make learning Python easier and more fun.</p>
+
+                        <h3>By the end of this lesson, you'll be able to:</h3>
                         <ul>
-                            <li>What GitHub is and why it matters.</li>
-                            <li>Version control basics.</li>
-                            <li>Working with repositories.</li>
-                            <li>Branching and forking.</li>
-                            <li>Sharing your work with instructors and classmates.</li>
+                            <li>Define what AI is and identify common AI applications</li>
+                            <li>Explain how Microsoft Copilot works as an AI tool</li>
+                            <li>Access Microsoft Copilot using your Minnesota State credentials</li>
+                            <li>Use Copilot to assist with basic Python programming tasks</li>
+                            <li>Evaluate AI-generated code for accuracy</li>
+                            <li>Apply best practices for writing effective prompts</li>
+                            <li>Identify ethical considerations when using AI tools</li>
                         </ul>
-                        <p><strong>Important:</strong> GitHub has a learning curve, but it's worth it. Millions of developers use it every day, and it's a skill that will serve you throughout your career.</p>
-                        
+
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107;">
+                            <p style="margin: 0;"><strong>🤣 Programming Joke Alert!</strong><br>
+                            Why do programmers prefer dark mode?<br>
+                            Because light attracts bugs!</p>
+                        </div>
+
                         <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
-                            <p style="margin: 0; font-size: 14px;"><strong>Accessibility Note:</strong> The audio narration on each slide contains the same information as the text on the page. You can choose to listen to the audio or read the text based on your preference.</p>
+                            <p style="margin: 0; font-size: 14px;"><strong>Accessibility Note:</strong> Audio narration is available for slides that have an audio player visible. You can choose to listen to the audio or read the text based on your preference.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2: What is GitHub? -->
+                <!-- Slide 2: Section Intro - What is AI? -->
                 <div class="slide" data-slide="2" data-type="content">
-                    <h2>What is GitHub?</h2>
+                    <h2>What is AI?</h2>
                     <div class="content">
-                        <img src="images/Computer-Programmer-Agile.jpg" alt="Developer working at desk with sticky notes on wall" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
-                        
-                        
-                        
-                        <p>GitHub is a web platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
-                        
-                        <div style="background-color: #f0f7ff; padding: 20px; border-left: 4px solid #0366d6; margin: 20px 0; clear: both;">
-                            <h3>Key Facts About GitHub</h3>
-                            <ul>
-                                <li><strong>Industry Standard:</strong> Used by millions of developers worldwide.</li>
-                                <li><strong>Microsoft Owned:</strong> Microsoft acquired GitHub in 2018, though it remains independently branded.</li>
-                                <li><strong>Free for Students:</strong> Public repositories are free, and students get premium features.</li>
-                                <li><strong>Career Asset:</strong> Most tech companies expect you to know Git and GitHub.</li>
-                            </ul>
-                        </div>
+                        <img src="images/ai-brain.jpg" alt="Digital brain representing artificial intelligence" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
 
-                        <p>Yes, GitHub can be challenging at first. But remember: every professional developer you admire went through the same learning process. Stick with it!</p>
+                        <p>AI stands for <strong>Artificial Intelligence</strong>. Think of it as a computer that can learn and make decisions, kind of like how you learn new things by practicing!</p>
+
+                        <p>But what does that actually mean? Let's break it down:</p>
+
+                        <ul>
+                            <li><strong>Artificial</strong> = Made by people (not natural)</li>
+                            <li><strong>Intelligence</strong> = The ability to learn and solve problems</li>
+                        </ul>
+
+                        <p>So AI is technology that can learn from information and use that learning to help people do things better or faster.</p>
+
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0;"><strong>Real-World Example:</strong> When Netflix suggests shows you might like, that's AI! It learned what you enjoy by watching what you've already watched.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Slide 3: Quiz Question 1 -->
-                <div class="slide" data-slide="3" data-type="quiz">
-                    <h2>Quick Check</h2>
+                <!-- Slide 3: AI Basics - Everyday Examples -->
+                <div class="slide" data-slide="3" data-type="content">
+                    <h2>AI in Your Daily Life</h2>
+                    <div class="content">
+                        <img src="images/smartphone-ai.jpg" alt="Person using smartphone with AI features" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>You probably use AI every day without even thinking about it! Here are some common examples:</p>
+
+                        <h3>AI is everywhere:</h3>
+                        <ul>
+                            <li><strong>Your phone's autocorrect</strong> - Predicts what word you're typing</li>
+                            <li><strong>Voice assistants</strong> - Siri, Alexa, Google Assistant understand what you say</li>
+                            <li><strong>Netflix & Spotify</strong> - Recommend shows and music you'll like</li>
+                            <li><strong>Google Maps</strong> - Finds the fastest route and predicts traffic</li>
+                            <li><strong>Face ID</strong> - Recognizes your face to unlock your phone</li>
+                            <li><strong>Spam filters</strong> - Your email knows what's junk mail</li>
+                        </ul>
+
+                        <p style="clear: both; padding-top: 10px;">All of these use AI to learn patterns and make helpful predictions!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Types of AI Tools -->
+                <div class="slide" data-slide="4" data-type="content">
+                    <h2>Types of AI Tools</h2>
+                    <div class="content">
+                        <img src="images/ai-tools.jpg" alt="Various AI tools and applications" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>There are different types of AI tools that do different things. Here are the main ones you'll see:</p>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">💬 Chatbots & Conversational AI</h3>
+                            <p>These are AI tools you can talk to, like ChatGPT, Google Bard, or Microsoft Copilot. They understand questions and give answers in regular language.</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">🎨 Image & Video Generators</h3>
+                            <p>Tools like DALL-E, Midjourney, or Adobe Firefly can create images from text descriptions. You describe what you want, and they make it!</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">💻 Code Assistants</h3>
+                            <p>These help programmers write code faster. Microsoft Copilot, GitHub Copilot, and Tabnine can suggest code, explain errors, and answer programming questions. This is what we'll focus on!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Quiz 1 -->
+                <div class="slide" data-slide="5" data-type="quiz">
+                    <h2>Quick Check #1</h2>
                     <div class="content">
                         <div class="quiz-question">
-                            <p><strong>What company owns GitHub?</strong></p>
-                            <label><input type="radio" name="q1" value="a"> Google</label>
-                            <label><input type="radio" name="q1" value="b"> Amazon</label>
-                            <label><input type="radio" name="q1" value="c"> Microsoft</label>
-                            <label><input type="radio" name="q1" value="d"> Apple</label>
+                            <p><strong>Which of these is an example of AI?</strong></p>
+                            <label><input type="radio" name="q1" value="a"> A calculator that adds numbers</label>
+                            <label><input type="radio" name="q1" value="b"> A voice assistant like Siri or Alexa</label>
+                            <label><input type="radio" name="q1" value="c"> A word processor like Microsoft Word</label>
+                            <label><input type="radio" name="q1" value="d"> A keyboard</label>
                             <div class="feedback" id="feedback-q1"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 4: Version Control Explained -->
-                <div class="slide" data-slide="4" data-type="content">
-                    <h2>Understanding Version Control</h2>
-                    <div class="content">
-                        <img src="images/chameleon_keyboard_computer.jpg" alt="Chameleon sitting on a keyboard" style="float: right; width: 280px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
-                        
-                        
-                        
-                        <p>Version control is a system that records changes to files over time. Think of it as a time machine for your code.</p>
-                        
-                        <h3>Why Version Control Matters</h3>
-                        <ul>
-                            <li><strong>Track Changes:</strong> See what changed, when, and by whom.</li>
-                            <li><strong>Undo Mistakes:</strong> Roll back to a previous version if something breaks.</li>
-                            <li><strong>Collaborate Safely:</strong> Multiple people can work on the same project without overwriting each other's work.</li>
-                            <li><strong>Backup:</strong> Your code is safely stored in the cloud.</li>
-                            <li><strong>Experiment:</strong> Try new features without breaking your working code.</li>
-                        </ul>
-
-                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; clear: both;">
-                            <strong>Real World Example:</strong> Imagine writing a paper. Without version control, you might save files like "essay_final.docx", "essay_final_v2.docx", "essay_ACTUAL_final.docx". With version control, you have one file with a complete history of all changes.
-                        </div>
-
-                        <div class="commit-animation" aria-label="Animation showing how commits work">
-                            <h3>How Commits Work</h3>
-                            <div class="timeline">
-                                <div class="commit-node commit-1">
-                                    <div class="commit-circle">1</div>
-                                    <div class="commit-label">First commit<br>"Initial project setup"</div>
-                                </div>
-                                <div class="commit-arrow"></div>
-                                <div class="commit-node commit-2">
-                                    <div class="commit-circle">2</div>
-                                    <div class="commit-label">Second commit<br>"Added login feature"</div>
-                                </div>
-                                <div class="commit-arrow"></div>
-                                <div class="commit-node commit-3">
-                                    <div class="commit-circle">3</div>
-                                    <div class="commit-label">Third commit<br>"Fixed bug in validation"</div>
-                                </div>
-                            </div>
-                            <p style="text-align: center; margin-top: 15px; font-size: 14px;">Each circle represents a snapshot of your project at that moment in time.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5: Quiz Question 2 -->
-                <div class="slide" data-slide="5" data-type="quiz">
-                    <h2>Quick Check</h2>
+                <!-- Slide 6: Quiz 2 -->
+                <div class="slide" data-slide="6" data-type="quiz">
+                    <h2>Quick Check #2</h2>
                     <div class="content">
                         <div class="quiz-question">
-                            <p><strong>What is the main purpose of version control?</strong></p>
-                            <label><input type="radio" name="q2" value="a"> To make your code run faster.</label>
-                            <label><input type="radio" name="q2" value="b"> To track changes and collaborate safely.</label>
-                            <label><input type="radio" name="q2" value="c"> To compile your code.</label>
-                            <label><input type="radio" name="q2" value="d"> To design user interfaces.</label>
+                            <p><strong>How does AI get better at its job?</strong></p>
+                            <label><input type="radio" name="q2" value="a"> It doesn't - it's always the same</label>
+                            <label><input type="radio" name="q2" value="b"> By seeing lots of examples and learning from them</label>
+                            <label><input type="radio" name="q2" value="c"> By getting faster computers</label>
+                            <label><input type="radio" name="q2" value="d"> Magic</label>
                             <div class="feedback" id="feedback-q2"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 6: Video - Introduction to Git -->
-                <div class="slide" data-slide="6" data-type="content">
-                    <h2>Watch: Introduction to Git</h2>
+                <!-- Slide 7: Section Intro - Microsoft Copilot -->
+                <div class="slide" data-slide="7" data-type="content">
+                    <h2>Introduction to Microsoft Copilot</h2>
                     <div class="content">
-                        <p>Watch this video for a beginner-friendly introduction to Git and version control:</p>
+                        <img src="images/copilot-workspace.jpg" alt="Professional using Microsoft Copilot on laptop" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
 
-                        <div style="text-align: center; margin: 30px 0;">
-                            <iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/812561/embedPlaykitJs/uiconf_id/52484262?iframeembed=true&entry_id=1_fovi50ux&config%5Bprovider%5D=%7B%22widgetId%22%3A%221_yd3evgkw%22%7D&config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 600px; height: 400px; border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Video: A brief introduction to Git for beginners - GitHub"></iframe>
-                        </div>
+                        <p>Now that you know what AI is, let's talk about the AI tool you'll be using: <strong>Microsoft Copilot</strong>!</p>
 
-                        <p><strong>Key Takeaway:</strong> Git is the version control system. GitHub is the website that hosts Git repositories and adds collaboration features.</p>
+                        <p>In the next few slides, we'll cover:</p>
+                        <ul>
+                            <li>What Microsoft Copilot is</li>
+                            <li>How it can help you with Python programming</li>
+                            <li>How to access it with your school account</li>
+                            <li>What the interface looks like</li>
+                        </ul>
+
+                        <p>Think of Copilot as your personal coding tutor that's available 24/7!</p>
                     </div>
                 </div>
 
-                <!-- Slide 7: Quiz - git add -->
-                <div class="slide" data-slide="7" data-type="quiz">
-                    <h2>Quick Check</h2>
+                <!-- Slide 8: What is Microsoft Copilot? -->
+                <div class="slide" data-slide="8" data-type="content">
+                    <h2>What is Microsoft Copilot?</h2>
                     <div class="content">
-                        <div class="quiz-question">
-                            <p><strong>What does the <code>git add</code> command do?</strong></p>
-                            <label><input type="radio" name="q8" value="a"> Deletes files from your repository.</label>
-                            <label><input type="radio" name="q8" value="b"> Downloads files from GitHub.</label>
-                            <label><input type="radio" name="q8" value="c"> Stages files to be included in your next commit.</label>
-                            <label><input type="radio" name="q8" value="d"> Uploads files to GitHub.</label>
-                            <div class="feedback" id="feedback-q8"></div>
-                        </div>
-                    </div>
-                </div>
+                        <img src="images/collaboration.jpg" alt="Two people collaborating on computer work" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
 
-                <!-- Slide 8: Quiz - git commit -->
-                <div class="slide" data-slide="8" data-type="quiz">
-                    <h2>Quick Check</h2>
-                    <div class="content">
-                        <div class="quiz-question">
-                            <p><strong>What does the <code>git commit</code> command do?</strong></p>
-                            <label><input type="radio" name="q9" value="a"> Uploads your changes to GitHub.</label>
-                            <label><input type="radio" name="q9" value="b"> Saves a snapshot of your staged changes to your local repository.</label>
-                            <label><input type="radio" name="q9" value="c"> Deletes your changes.</label>
-                            <label><input type="radio" name="q9" value="d"> Downloads changes from GitHub.</label>
-                            <div class="feedback" id="feedback-q9"></div>
-                        </div>
-                    </div>
-                </div>
+                        <p>Microsoft Copilot is like having a helpful friend who knows a lot about coding. You can ask it questions, and it'll help you write Python code!</p>
 
-                <!-- Slide 9: Quiz - git push -->
-                <div class="slide" data-slide="9" data-type="quiz">
-                    <h2>Quick Check</h2>
-                    <div class="content">
-                        <div class="quiz-question">
-                            <p><strong>What does the <code>git push</code> command do?</strong></p>
-                            <label><input type="radio" name="q10" value="a"> Uploads your committed changes to a remote repository like GitHub.</label>
-                            <label><input type="radio" name="q10" value="b"> Saves changes to your local repository.</label>
-                            <label><input type="radio" name="q10" value="c"> Stages files for commit.</label>
-                            <label><input type="radio" name="q10" value="d"> Downloads changes from GitHub.</label>
-                            <div class="feedback" id="feedback-q10"></div>
+                        <h3>What makes Copilot special?</h3>
+                        <ul>
+                            <li>It understands normal, everyday language - no special computer talk needed</li>
+                            <li>It can explain code in simple terms</li>
+                            <li>It helps you learn by showing examples</li>
+                            <li>It's available anytime you need help</li>
+                            <li>It's free with your Minnesota State account!</li>
+                        </ul>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0; clear: both;">
+                            <p style="margin: 0;"><strong>Important:</strong> Copilot is a <em>helper</em>, not a replacement for learning. Think of it like a tutor - it can guide you, but you still need to understand the material!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 10: Quiz - Git Workflow Ordering -->
-                <div class="slide" data-slide="10" data-type="quiz">
-                    <h2>Git Workflow</h2>
+                <!-- Slide 9: How Copilot Helps Programmers -->
+                <div class="slide" data-slide="9" data-type="content">
+                    <h2>How Copilot Helps You Code</h2>
                     <div class="content">
-                        <div class="quiz-question">
-                            <p><strong>Put these Git commands in the correct order for a typical workflow:</strong></p>
-                            <div id="orderingContainer" class="ordering-quiz">
-                                <div class="ordering-item" draggable="true" data-step="stage">git add (stage changes)</div>
-                                <div class="ordering-item" draggable="true" data-step="commit">git commit (save snapshot)</div>
-                                <div class="ordering-item" draggable="true" data-step="push">git push (upload to GitHub)</div>
-                            </div>
-                            <button onclick="checkOrdering()" class="check-button">Check Answer</button>
-                            <div class="feedback" id="feedback-ordering"></div>
+                        <img src="images/coding-help.jpg" alt="Student learning to code with assistance" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>Here are the main ways Copilot can help you with Python:</p>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">✍️ Write Code for You</h3>
+                            <p>Tell Copilot what you want your program to do, and it'll suggest code. But remember - you still need to read and understand it!</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">📖 Explain Code</h3>
+                            <p>If you see code you don't understand, paste it into Copilot and ask "What does this code do?" It'll explain it in plain English.</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">🐛 Find and Fix Errors</h3>
+                            <p>Got an error message? Copilot can help you figure out what went wrong and how to fix it.</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">❓ Answer Questions</h3>
+                            <p>Ask anything about Python! "How do I create a variable?" "What does the print() function do?" Copilot can answer it all.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 11: Repositories -->
+                <!-- Slide 10: Accessing Copilot -->
+                <div class="slide" data-slide="10" data-type="content">
+                    <h2>How to Access Microsoft Copilot</h2>
+                    <div class="content">
+                        <img src="images/laptop-login.jpg" alt="Laptop on desk ready for login" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>Good news - accessing Copilot is super easy! You already have everything you need.</p>
+
+                        <h3>Follow these simple steps:</h3>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <h4 style="margin-top: 0;">Step 1: Go to the website</h4>
+                            <p style="font-size: 18px;"><strong>copilot.microsoft.com</strong></p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h4 style="margin-top: 0;">Step 2: Sign in with Microsoft</h4>
+                            <p>Click the "Sign in" button and choose "Sign in with Microsoft"</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h4 style="margin-top: 0;">Step 3: Use your StarID</h4>
+                            <p>Enter your email: <strong>StarID@go.minneapolis.edu</strong><br>
+                            (Replace "StarID" with your actual Star ID)</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h4 style="margin-top: 0;">Step 4: Enter your password</h4>
+                            <p>Use the same password you use for email and other school systems</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>That's it!</strong> You're now ready to use Copilot. It's the same login you use for email and other Microsoft 365 apps.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 11: Copilot Interface Tour -->
                 <div class="slide" data-slide="11" data-type="content">
-                    <h2>Working with Repositories</h2>
+                    <h2>Copilot Interface Tour</h2>
                     <div class="content">
-                        <img src="images/computer-hamster4.jpg" alt="Hamster sitting at a desk with a small laptop" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
-                        
-                        
-                        
-                        <p>A <strong>repository</strong> (or "repo") is a folder that contains your project files and the entire history of changes.</p>
+                        <img src="images/workspace-overview.jpg" alt="Overview of digital workspace" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
 
-                        <h3>What's in a Repository?</h3>
-                        <ul>
-                            <li>Your project files (code, images, documents).</li>
-                            <li>A README file explaining what the project is.</li>
-                            <li>A complete history of all changes.</li>
-                            <li>Branches for different versions or features.</li>
-                        </ul>
+                        <p>When you open Copilot, you'll see a clean, simple interface. Here's what you need to know:</p>
 
-                        <h3>The README File</h3>
-                        <p style="clear: both;">The README.md file is the front page of your repository. It should explain:</p>
-                        <ul>
-                            <li>What the project does.</li>
-                            <li>How to use it.</li>
-                            <li>Who created it.</li>
-                        </ul>
-
-                        <div style="background-color: #f6f8fa; padding: 15px; border-radius: 5px; margin: 20px 0; font-family: monospace; font-size: 14px;">
-                            <strong>Example README.md:</strong><br><br>
-                            # My C# Learning Project<br>
-                            This repository contains my work for ITEC 2560.<br>
-                            <br>
-                            ## Author<br>
-                            Jane Student<br>
-                            <br>
-                            ## Description<br>
-                            Practice exercises for learning C# programming.
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">💬 The Chat Box</h3>
+                            <p>This is where you type your questions or requests. It's usually at the bottom of the screen. Just click in it and start typing!</p>
                         </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">📝 The Conversation Area</h3>
+                            <p>This shows your conversation with Copilot. You'll see your questions and Copilot's answers here.</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">🔄 New Conversation Button</h3>
+                            <p>Want to start fresh? Click this to begin a new conversation. Your old chats are usually saved so you can go back to them.</p>
+                        </div>
+
+                        <p>That's really all you need to know to get started! It's designed to be simple and easy to use.</p>
                     </div>
                 </div>
 
-                <!-- Slide 12: Quiz Question 3 (Matching) -->
+                <!-- Slide 12: Quiz 3 -->
                 <div class="slide" data-slide="12" data-type="quiz">
-                    <h2>Quick Check: Match the Terms</h2>
-                    <div class="content">
-                        <p>Match each Git term with its definition:</p>
-                        <div class="matching-quiz">
-                            <div class="matching-question">
-                                <p><strong>1. Repository</strong></p>
-                                <select name="match1" id="match1">
-                                    <option value="">-- Select Definition --</option>
-                                    <option value="a">A snapshot of your project at a specific time.</option>
-                                    <option value="b">A folder containing your project and its history.</option>
-                                    <option value="c">The main development branch.</option>
-                                    <option value="d">A message describing your changes.</option>
-                                </select>
-                            </div>
-                            <div class="matching-question">
-                                <p><strong>2. Commit</strong></p>
-                                <select name="match2" id="match2">
-                                    <option value="">-- Select Definition --</option>
-                                    <option value="a">A snapshot of your project at a specific time.</option>
-                                    <option value="b">A folder containing your project and its history.</option>
-                                    <option value="c">The main development branch.</option>
-                                    <option value="d">A message describing your changes.</option>
-                                </select>
-                            </div>
-                            <div class="matching-question">
-                                <p><strong>3. Main Branch</strong></p>
-                                <select name="match3" id="match3">
-                                    <option value="">-- Select Definition --</option>
-                                    <option value="a">A snapshot of your project at a specific time.</option>
-                                    <option value="b">A folder containing your project and its history.</option>
-                                    <option value="c">The main development branch.</option>
-                                    <option value="d">A message describing your changes.</option>
-                                </select>
-                            </div>
-                            <button onclick="checkMatching()" class="check-button">Check Answers</button>
-                            <div class="feedback" id="feedback-matching"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 13: Branching -->
-                <div class="slide" data-slide="13" data-type="content">
-                    <h2>Branching: Experiment Safely</h2>
-                    <div class="content">
-                        <img src="images/computer-programmer-students.jpg" alt="Three students collaborating at a computer" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
-                        
-                        
-                        
-                        <p>A <strong>branch</strong> is a separate version of your code where you can experiment without affecting the working code.</p>
-
-                        <h3>Why Use Branches?</h3>
-                        <ul>
-                            <li>Try new features without breaking working code.</li>
-                            <li>Work on multiple features at the same time.</li>
-                            <li>Keep your main branch clean and working.</li>
-                            <li>Industry standard practice.</li>
-                        </ul>
-
-                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; clear: both;">
-                            <strong>Analogy:</strong> Think of branches like save files in a video game. The main branch is your primary save. Other branches let you try different strategies without losing your progress.
-                        </div>
-
-                        <div class="branch-animation" aria-label="Animation showing how branches work">
-                            <h3>How Branches Work</h3>
-                            <div class="branch-diagram">
-                                <div class="branch-line main-line">
-                                    <div class="branch-commit">C1</div>
-                                    <div class="branch-commit">C2</div>
-                                    <div class="branch-commit">C5</div>
-                                    <div class="branch-label">main</div>
-                                </div>
-                                <div class="branch-line feature-line">
-                                    <div class="branch-commit branch-start">C2</div>
-                                    <div class="branch-commit">C3</div>
-                                    <div class="branch-commit">C4</div>
-                                    <div class="branch-label">feature-login</div>
-                                </div>
-                            </div>
-                            <p style="text-align: center; margin-top: 15px; font-size: 14px;">The feature branch splits off from main, gets new commits, then can be merged back.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 14: Quiz Question 4 -->
-                <div class="slide" data-slide="14" data-type="quiz">
-                    <h2>Quick Check</h2>
+                    <h2>Quick Check #3</h2>
                     <div class="content">
                         <div class="quiz-question">
-                            <p><strong>Why should you use branches?</strong></p>
-                            <label><input type="radio" name="q4" value="a"> To make your repository look more professional.</label>
-                            <label><input type="radio" name="q4" value="b"> Branches are required by GitHub.</label>
-                            <label><input type="radio" name="q4" value="c"> To experiment with new features without breaking your main code.</label>
-                            <label><input type="radio" name="q4" value="d"> To delete old code.</label>
+                            <p><strong>What website do you go to for Microsoft Copilot?</strong></p>
+                            <label><input type="radio" name="q3" value="a"> copilot.google.com</label>
+                            <label><input type="radio" name="q3" value="b"> copilot.microsoft.com</label>
+                            <label><input type="radio" name="q3" value="c"> microsoft.copilot.com</label>
+                            <label><input type="radio" name="q3" value="d"> ai.microsoft.com</label>
+                            <div class="feedback" id="feedback-q3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 13: Quiz 4 -->
+                <div class="slide" data-slide="13" data-type="quiz">
+                    <h2>Quick Check #4</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What account do you use to login to Copilot?</strong></p>
+                            <label><input type="radio" name="q4" value="a"> Your personal Gmail account</label>
+                            <label><input type="radio" name="q4" value="b"> Your StarID@go.minneapolis.edu account</label>
+                            <label><input type="radio" name="q4" value="c"> You don't need to login</label>
+                            <label><input type="radio" name="q4" value="d"> Your Facebook account</label>
                             <div class="feedback" id="feedback-q4"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 15: Forking -->
-                <div class="slide" data-slide="15" data-type="content">
-                    <h2>Forking vs. Cloning</h2>
+                <!-- Slide 14: Section Intro - Using Copilot for Python -->
+                <div class="slide" data-slide="14" data-type="content">
+                    <h2>Using Copilot for Python</h2>
                     <div class="content">
-                        <img src="images/business-women.jpg" alt="Two women having a professional discussion" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
-                        
-                        
-                        
-                        <p>Students often get confused between forking and cloning. Here's the difference:</p>
+                        <img src="images/python-coding.jpg" alt="Person coding in Python" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
 
-                        <div style="background-color: #d4edda; padding: 20px; margin: 20px 0; border-radius: 8px; clear: both;">
-                            <h3>Cloning</h3>
+                        <p>Now for the fun part - let's learn how to actually use Copilot to help you with Python!</p>
+
+                        <p>In this section, we'll explore:</p>
+                        <ul>
+                            <li>How to write your first prompt</li>
+                            <li>Practice activities you can try</li>
+                            <li>Getting help with variables, print, input, and math</li>
+                            <li>Tips for writing good prompts</li>
+                        </ul>
+
+                        <p>Remember: The goal isn't to let Copilot do all your work. The goal is to use it as a learning tool to understand Python better!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 15: Your First Conversation with Copilot -->
+                <div class="slide" data-slide="15" data-type="content">
+                    <h2>Your First Conversation with Copilot</h2>
+                    <div class="content">
+                        <img src="images/conversation.jpg" alt="People having a conversation" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>Let's start simple! You can just talk to Copilot like a person. Here are some good first prompts to try:</p>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <h3 style="margin-top: 0;">Example Prompts:</h3>
                             <ul>
-                                <li>Downloads a copy to your computer.</li>
-                                <li>You can make changes locally.</li>
-                                <li>If you have permission, you can push changes back.</li>
-                                <li>Used for your own repositories or team projects.</li>
+                                <li>"What is a variable in Python?"</li>
+                                <li>"How do I print something in Python?"</li>
+                                <li>"Show me how to ask the user for their name"</li>
+                                <li>"Explain what the input() function does"</li>
                             </ul>
                         </div>
 
-                        <div style="background-color: #e7f3ff; padding: 20px; margin: 20px 0; border-radius: 8px;">
-                            <h3>Forking</h3>
-                            <ul>
-                                <li>Creates a copy of someone else's repository under YOUR GitHub account.</li>
-                                <li>You own this copy and can do whatever you want with it.</li>
-                                <li>Used when you want to contribute to someone else's project.</li>
-                                <li>You can suggest changes back via "pull requests".</li>
-                            </ul>
+                        <h3>Good Prompts vs. Bad Prompts</h3>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                            <p style="margin: 0;"><strong>✅ Good:</strong> "Write Python code to print 'Hello World'"</p>
                         </div>
 
-                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                            <strong>Real Example:</strong> Your instructor posts starter code. You fork it to your account, clone it to your computer, complete the assignment, commit and push to YOUR fork, then share the link with your instructor.
+                        <div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                            <p style="margin: 0;"><strong>❌ Bad:</strong> "python"</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                            <p style="margin: 0;"><strong>✅ Good:</strong> "Explain how to create a variable that stores my age"</p>
+                        </div>
+
+                        <div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                            <p style="margin: 0;"><strong>❌ Bad:</strong> "help"</p>
+                        </div>
+
+                        <p><strong>Tip:</strong> Be specific! The more details you give, the better Copilot's answer will be.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 16: Try It Yourself #1 -->
+                <div class="slide" data-slide="16" data-type="content">
+                    <h2>Try It Yourself! Activity #1</h2>
+                    <div class="content">
+                        <img src="images/hands-on-practice.jpg" alt="Hands on keyboard practicing" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>Time to practice! Open Copilot in another tab (copilot.microsoft.com) and try these prompts. Check each box as you complete it:</p>
+
+                        <div style="background-color: #fff3cd; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #ffc107;">
+                            <h3 style="margin-top: 0;">📝 Practice Checklist:</h3>
+                            <p><input type="checkbox" id="practice1-1"> <strong>Prompt 1:</strong> "Explain what the print() function does in Python"</p>
+                            <p><input type="checkbox" id="practice1-2"> <strong>Prompt 2:</strong> "Show me how to create a variable called age"</p>
+                            <p><input type="checkbox" id="practice1-3"> <strong>Prompt 3:</strong> "How do I add two numbers in Python?"</p>
+                        </div>
+
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0;"><strong>Remember:</strong> This activity is just for practice - it's not graded! Take your time and explore. Try asking follow-up questions if you're curious about something.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 16: Quiz Question 5 -->
-                <div class="slide" data-slide="16" data-type="quiz">
-                    <h2>Quick Check</h2>
+                <!-- Slide 17: Getting Python Code Help - Variables -->
+                <div class="slide" data-slide="17" data-type="content">
+                    <h2>Code Help: Variables</h2>
+                    <div class="content">
+                        <img src="images/coding-variables.jpg" alt="Code with variables highlighted" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>Let's see how Copilot can help you with variables - one of the most basic concepts in Python!</p>
+
+                        <h3>Example Prompt:</h3>
+                        <div style="background-color: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <p style="font-family: monospace;">"Write Python code to create a variable called favorite_color and set it to blue"</p>
+                        </div>
+
+                        <h3>Copilot's Response:</h3>
+                        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 20px; margin: 15px 0; border-radius: 8px; font-family: 'Courier New', monospace;">
+                            <code>favorite_color = "blue"</code>
+                        </div>
+
+                        <h3>What this does:</h3>
+                        <ul>
+                            <li><strong>favorite_color</strong> is the variable name</li>
+                            <li><strong>=</strong> means "assign" or "store"</li>
+                            <li><strong>"blue"</strong> is the value (text/string)</li>
+                        </ul>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>See?</strong> Copilot knows Python! But make sure you understand what the code does. Don't just copy - learn from it!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 18: Getting Python Code Help - Print -->
+                <div class="slide" data-slide="18" data-type="content">
+                    <h2>Code Help: Print Statements</h2>
+                    <div class="content">
+                        <img src="images/output-display.jpg" alt="Computer screen showing output" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>The print() function displays text on the screen. Let's ask Copilot for help!</p>
+
+                        <h3>Example Prompt:</h3>
+                        <div style="background-color: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 8px;">
+                            <p style="font-family: monospace;">"Write Python code to print 'Hello, World!'"</p>
+                        </div>
+
+                        <h3>Copilot's Response:</h3>
+                        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 20px; margin: 15px 0; border-radius: 8px; font-family: 'Courier New', monospace;">
+                            <code>print("Hello, World!")</code>
+                        </div>
+
+                        <h3>What this does:</h3>
+                        <ul>
+                            <li><strong>print()</strong> is a function that displays text</li>
+                            <li>The text goes inside quotes: <strong>"Hello, World!"</strong></li>
+                            <li>When you run this code, you'll see: Hello, World!</li>
+                        </ul>
+
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0;"><strong>You probably knew this one!</strong> But Copilot can help with way more complicated stuff too. Let's keep going!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 19: Getting Python Code Help - Input -->
+                <div class="slide" data-slide="19" data-type="content">
+                    <h2>Code Help: Getting Input</h2>
+                    <div class="content">
+                        <img src="images/user-input.jpg" alt="Person typing on keyboard" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>The input() function lets you ask the user for information. Let's see how Copilot explains it!</p>
+
+                        <h3>Example Prompt:</h3>
+                        <div style="background-color: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <p style="font-family: monospace;">"Write Python code to ask the user for their name and print it"</p>
+                        </div>
+
+                        <h3>Copilot's Response:</h3>
+                        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 20px; margin: 15px 0; border-radius: 8px; font-family: 'Courier New', monospace;">
+                            <code>name = input("What is your name? ")<br>
+                            print(name)</code>
+                        </div>
+
+                        <h3>What this does:</h3>
+                        <ul>
+                            <li><strong>input("What is your name? ")</strong> asks the user a question</li>
+                            <li>Whatever they type gets stored in the variable <strong>name</strong></li>
+                            <li><strong>print(name)</strong> displays what they typed</li>
+                        </ul>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>Now we're getting somewhere!</strong> This code asks a question AND shows the answer. That's how you make programs interactive!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 20: Getting Python Code Help - Simple Math -->
+                <div class="slide" data-slide="20" data-type="content">
+                    <h2>Code Help: Simple Math</h2>
+                    <div class="content">
+                        <img src="images/calculator-math.jpg" alt="Calculator and mathematics" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>Python can do math! Let's ask Copilot to show us how.</p>
+
+                        <h3>Example Prompt:</h3>
+                        <div style="background-color: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 8px;">
+                            <p style="font-family: monospace;">"Write Python code to add 5 and 3 and print the answer"</p>
+                        </div>
+
+                        <h3>Copilot's Response:</h3>
+                        <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 20px; margin: 15px 0; border-radius: 8px; font-family: 'Courier New', monospace;">
+                            <code>result = 5 + 3<br>
+                            print(result)</code>
+                        </div>
+
+                        <h3>Python Math Operators:</h3>
+                        <ul>
+                            <li><strong>+</strong> Addition (5 + 3 = 8)</li>
+                            <li><strong>-</strong> Subtraction (10 - 4 = 6)</li>
+                            <li><strong>*</strong> Multiplication (6 * 2 = 12)</li>
+                            <li><strong>/</strong> Division (20 / 4 = 5)</li>
+                        </ul>
+
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0;"><strong>Cool, right?</strong> Copilot can help you with math in Python. You can ask it to do way more complicated calculations too!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 21: Writing Good Prompts -->
+                <div class="slide" data-slide="21" data-type="content">
+                    <h2>Writing Good Prompts</h2>
+                    <div class="content">
+                        <img src="images/thinking-writing.jpg" alt="Person thinking and writing" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>The better your question, the better Copilot's answer! Here are some tips for writing great prompts:</p>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <h3 style="margin-top: 0;">✅ Be Specific</h3>
+                            <p><strong>Instead of:</strong> "variables"<br>
+                            <strong>Try:</strong> "Show me how to create a variable that stores my age"</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">✅ Say What You Want</h3>
+                            <p><strong>Instead of:</strong> "help me"<br>
+                            <strong>Try:</strong> "Write code that asks for the user's favorite number"</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">✅ Ask for Explanations</h3>
+                            <p><strong>Instead of:</strong> "print"<br>
+                            <strong>Try:</strong> "Explain why we use quotes in the print() function"</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">✅ Ask Follow-Up Questions</h3>
+                            <p>If you don't understand something, ask Copilot to explain it differently! Try: "Can you explain that in simpler terms?" or "Can you show me another example?"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 22: Quiz 5 -->
+                <div class="slide" data-slide="22" data-type="quiz">
+                    <h2>Quick Check #5</h2>
                     <div class="content">
                         <div class="quiz-question">
-                            <p><strong>What is the difference between forking and cloning?</strong></p>
-                            <label><input type="radio" name="q5" value="a"> They are the same thing.</label>
-                            <label><input type="radio" name="q5" value="b"> Forking creates a copy on GitHub under your account; cloning downloads to your computer.</label>
-                            <label><input type="radio" name="q5" value="c"> Cloning is for public repos; forking is for private repos.</label>
-                            <label><input type="radio" name="q5" value="d"> Forking is faster than cloning.</label>
+                            <p><strong>Which is a better prompt for Copilot?</strong></p>
+                            <label><input type="radio" name="q5" value="a"> "python"</label>
+                            <label><input type="radio" name="q5" value="b"> "Write Python code to print my name"</label>
+                            <label><input type="radio" name="q5" value="c"> "help"</label>
+                            <label><input type="radio" name="q5" value="d"> "???"</label>
                             <div class="feedback" id="feedback-q5"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 17: Sharing with Instructor and Classmates -->
-                <div class="slide" data-slide="17" data-type="content">
-                    <h2>Sharing Your Repository</h2>
+                <!-- Slide 23: Section Intro - Evaluating AI Output -->
+                <div class="slide" data-slide="23" data-type="content">
+                    <h2>Evaluating AI Output</h2>
                     <div class="content">
-                        <img src="images/BeardedDragon_mouse.jpg" alt="Bearded dragon next to a computer mouse" style="float: right; width: 240px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
-                        
-                        
-                        
-                        <h3>For Class Assignments</h3>
-                        
-                        <div style="background-color: #f0f7ff; padding: 20px; margin: 20px 0; border-radius: 8px;">
-                            <h4>Option 1: Share the Link (Public Repository)</h4>
-                            <ul>
-                                <li>Make sure your repository is public.</li>
-                                <li>Copy the URL from your browser.</li>
-                                <li>Submit it in D2L.</li>
-                            </ul>
-                            <p><strong>Example URL:</strong> https://github.com/yourusername/your-repo-name</p>
-                        </div>
+                        <img src="images/quality-check.jpg" alt="Person reviewing work quality" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
 
-                        <div style="background-color: #fff3cd; padding: 20px; margin: 20px 0; border-radius: 8px; clear: both;">
-                            <h4>Option 2: Add Collaborators (Private Repository)</h4>
-                            <p>If you want to keep your repo private, you can give your instructor access by adding them as a collaborator in your repository settings.</p>
-                        </div>
+                        <p>Here's something really important: <strong>AI isn't always right!</strong> You need to check its work.</p>
 
-                        <h3>For Group Projects</h3>
+                        <p>In this section, we'll cover:</p>
                         <ul>
-                            <li>One person creates the repository.</li>
-                            <li>They add team members as collaborators.</li>
-                            <li>Everyone clones the same repository.</li>
-                            <li>Use branches for different features.</li>
-                            <li>Merge branches when features are complete.</li>
+                            <li>Understanding that AI makes mistakes</li>
+                            <li>How to check if code is correct</li>
+                            <li>When to use AI vs. doing it yourself</li>
                         </ul>
 
-                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                            <strong>Pro Tip:</strong> Always include a README.md that explains how to run your project. Your instructor (and future employers) will appreciate it!
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107;">
+                            <p style="margin: 0;"><strong>Remember:</strong> AI is a tool to help you learn, not a magic solution that's always perfect!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 18: Quiz Question 6 (True/False) -->
-                <div class="slide" data-slide="18" data-type="quiz">
-                    <h2>Quick Check: True or False</h2>
+                <!-- Slide 24: AI Isn't Perfect -->
+                <div class="slide" data-slide="24" data-type="content">
+                    <h2>AI Isn't Always Right</h2>
+                    <div class="content">
+                        <img src="images/warning-caution.jpg" alt="Caution sign concept" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>Here's the thing: Copilot is really smart, but it's not perfect. Sometimes it makes mistakes!</p>
+
+                        <h3>Copilot might:</h3>
+                        <ul style="clear: both;">
+                            <li>Suggest code that looks good but doesn't work</li>
+                            <li>Misunderstand what you're asking for</li>
+                            <li>Give you outdated information</li>
+                            <li>Make small syntax errors (like forgetting a colon)</li>
+                            <li>Give you a solution that's too complicated for what you need</li>
+                        </ul>
+
+                        <div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #dc3545;">
+                            <p style="margin: 0;"><strong>⚠️ Important:</strong> NEVER just copy Copilot's code without reading it! You need to understand what it does and make sure it works.</p>
+                        </div>
+
+                        <p><strong>Your job is to check Copilot's work, just like you'd check a friend's work.</strong> You're the programmer - Copilot is just your assistant!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 25: How to Check If Code Is Correct -->
+                <div class="slide" data-slide="25" data-type="content">
+                    <h2>How to Check If Code Is Correct</h2>
+                    <div class="content">
+                        <img src="images/checklist-verify.jpg" alt="Checklist for verification" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>Whenever Copilot gives you code, follow these three steps:</p>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #28a745;">
+                            <h3 style="margin-top: 0;">Step 1: READ It</h3>
+                            <p><strong>Do you understand what each line does?</strong></p>
+                            <p>Read through the code carefully. If there's something you don't understand, ask Copilot to explain that specific part.</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #28a745;">
+                            <h3 style="margin-top: 0;">Step 2: TEST It</h3>
+                            <p><strong>Does it run without errors?</strong></p>
+                            <p>Try running the code. Does it do what you expected? Does it give you the right output?</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #28a745;">
+                            <h3 style="margin-top: 0;">Step 3: UNDERSTAND It</h3>
+                            <p><strong>Can you explain it to someone else?</strong></p>
+                            <p>If you can't explain how the code works, you don't really understand it yet. Keep asking questions until it makes sense!</p>
+                        </div>
+
+                        <p><strong>If you can't explain it, you don't really know it!</strong> That's okay - just keep learning.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 26: Quiz 6 - CONVERTED FROM MATCHING TO MULTIPLE CHOICE -->
+                <div class="slide" data-slide="26" data-type="quiz">
+                    <h2>Quick Check #6</h2>
                     <div class="content">
                         <div class="quiz-question">
-                            <p><strong>True or False: You can make a repository private and still share it with your instructor.</strong></p>
-                            <label><input type="radio" name="q6" value="true"> True</label>
-                            <label><input type="radio" name="q6" value="false"> False</label>
+                            <p><strong>When you READ the code that Copilot gives you, what are you checking?</strong></p>
+                            <label><input type="radio" name="q6" value="a"> Whether it looks pretty</label>
+                            <label><input type="radio" name="q6" value="b"> Do I understand what it does?</label>
+                            <label><input type="radio" name="q6" value="c"> How long it took to write</label>
+                            <label><input type="radio" name="q6" value="d"> If it has enough comments</label>
                             <div class="feedback" id="feedback-q6"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 19: Tips for Success -->
-                <div class="slide" data-slide="19" data-type="content">
-                    <h2>Tips for GitHub Success</h2>
+                <!-- Slide 27: When to Use AI vs Doing It Yourself -->
+                <div class="slide" data-slide="27" data-type="content">
+                    <h2>When to Use AI vs. Doing It Yourself</h2>
                     <div class="content">
-                        <img src="images/developer-writing-documentation.jpg" alt="Developer writing notes while working on laptop" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
-                        
-                        
-                        
-                        <h3>Yes, GitHub is Hard at First</h3>
-                        <p>Let's be honest: GitHub has a steep learning curve. But here's why you should push through:</p>
-                        
-                        <p style="clear: both;">It's an industry standard. Over a million developers use GitHub. It's also a career boost, since employers expect you to have a GitHub profile. You can use GitHub as a portfolio of your work. Your repos are proof of your skills. GitHub allows you to collaborate and work in teams. Finally, Microsoft, which is the second biggest software company in the world, owns GitHub and continues investing in it.</p>
+                        <img src="images/balance-decision.jpg" alt="Balance and decision making" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
 
-                        <h3 style="clear: both;">Common Mistakes to Avoid</h3>
-                        <div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                        <p>Sometimes you should try coding on your own first! Here's when to use Copilot and when to practice independently:</p>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <h3 style="margin-top: 0;">✅ Good Times to Use Copilot:</h3>
                             <ul>
-                                <li>Forgetting to commit before closing your computer.</li>
-                                <li>Not pulling before you start working (gets you out of sync).</li>
-                                <li>Committing passwords or API keys.</li>
-                                <li>Vague commit messages like "fixed stuff".</li>
-                                <li>Working directly on main instead of using branches.</li>
+                                <li>You're stuck and don't know how to proceed</li>
+                                <li>You need an explanation of a concept</li>
+                                <li>You want to see an example of how something works</li>
+                                <li>You got an error and don't understand why</li>
+                                <li>You want to learn a new technique</li>
                             </ul>
                         </div>
 
-                        <h3>Best Practices</h3>
-                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                        <div style="background-color: #fff3cd; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">⚠️ Try It Yourself First:</h3>
                             <ul>
-                                <li>Commit early and often.</li>
-                                <li>Write clear commit messages.</li>
-                                <li>Pull before you push.</li>
-                                <li>Use .gitignore for files you don't want tracked.</li>
-                                <li>Keep your README up to date.</li>
-                                <li>Don't be afraid to ask for help.</li>
+                                <li>You're practicing something new you just learned</li>
+                                <li>You're doing homework or classwork</li>
+                                <li>You're taking a quiz or test</li>
+                                <li>You want to build your skills and confidence</li>
+                                <li>It's something you've done before</li>
                             </ul>
                         </div>
 
-                        <p><strong>Remember:</strong> Every professional developer struggled with Git at first. You're not alone. Keep practicing, and it will become second nature!</p>
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0;"><strong>Think of Copilot like a tutor, not someone to do your work for you.</strong> Use it to understand and learn, not to avoid learning!</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Slide 20: Quiz Question 7 -->
-                <div class="slide" data-slide="20" data-type="quiz">
-                    <h2>Quick Check</h2>
+                <!-- Slide 28: Quiz 7 -->
+                <div class="slide" data-slide="28" data-type="quiz">
+                    <h2>Quick Check #7</h2>
                     <div class="content">
                         <div class="quiz-question">
-                            <p><strong>Which of these is a best practice for Git commit messages?</strong></p>
-                            <label><input type="radio" name="q7" value="a"> "Updated files"</label>
-                            <label><input type="radio" name="q7" value="b"> "Fixed bug in login validation"</label>
-                            <label><input type="radio" name="q7" value="c"> "Stuff"</label>
-                            <label><input type="radio" name="q7" value="d"> "Changes"</label>
+                            <p><strong>What should you ALWAYS do with AI-generated code before using it?</strong></p>
+                            <label><input type="radio" name="q7" value="a"> Copy it without reading</label>
+                            <label><input type="radio" name="q7" value="b"> Read it, test it, and make sure you understand it</label>
+                            <label><input type="radio" name="q7" value="c"> Assume it's always perfect</label>
+                            <label><input type="radio" name="q7" value="d"> Delete it immediately</label>
                             <div class="feedback" id="feedback-q7"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 21: Conclusion -->
-                <div class="slide" data-slide="21" data-type="content">
-                    <h2>Congratulations!</h2>
+                <!-- Slide 29: Section Intro - AI Ethics & Academic Integrity -->
+                <div class="slide" data-slide="29" data-type="content">
+                    <h2>AI Ethics & Academic Integrity</h2>
                     <div class="content">
-                        <img src="images/developers-coding.jpg" alt="Developers collaborating on code together" style="float: right; width: 340px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+                        <img src="images/ethics-responsibility.jpg" alt="Ethics and responsibility concept" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
 
+                        <p>This section is <strong>really important!</strong> We're going to talk about using AI responsibly and ethically.</p>
 
-
-                        <p>You've completed the Introduction to GitHub and Version Control lesson!</p>
-
-                        <h3>What You Learned</h3>
+                        <p>Topics we'll cover:</p>
                         <ul>
-                            <li>What GitHub is and why it's the industry standard.</li>
-                            <li>How version control works.</li>
-                            <li>What repositories are and how to use them.</li>
-                            <li>The difference between branching and forking.</li>
-                            <li>How to share your repositories.</li>
+                            <li>Using AI responsibly</li>
+                            <li>Checking your syllabus for instructor policies</li>
+                            <li>How and when to cite AI assistance</li>
+                            <li>Privacy and security concerns</li>
                         </ul>
 
-                        <p><strong>Remember:</strong> GitHub gets easier with practice. Don't give up! Every commit you make builds your skills and your professional portfolio.</p>
-
-                        <p><strong>This is your instructor, Dr. Mary Lebens, signing off. Have a great day.</strong></p>
-
-                        <div style="background-color: #d4edda; padding: 20px; border-radius: 8px; margin: 20px 0; clear: both;">
-                            <h3>Additional Resources</h3>
-                            <ul>
-                                <li><a href="https://docs.github.com/en/get-started" target="_blank" rel="noopener noreferrer">GitHub Official Documentation</a></li>
-                                <li><a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer">GitHub Student Developer Pack</a> (Free premium features!)</li>
-                                <li><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener noreferrer">Interactive Git Tutorial</a></li>
-                            </ul>
-                        </div>
-
-                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107; font-style: italic;">
-                            <strong>Final thought:</strong> Remember, there are only 10 types of people in the world. Those who understand binary, and those who don't. 😄
+                        <div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #dc3545;">
+                            <p style="margin: 0;"><strong>⚠️ Pay attention:</strong> Using AI wrong can get you in trouble academically. Let's make sure you know how to use it the right way!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 22: Score Report -->
-                <div class="slide" data-slide="22" data-type="score">
-                    <h2>Your Score Report</h2>
+                <!-- Slide 30: Using AI Responsibly -->
+                <div class="slide" data-slide="30" data-type="content">
+                    <h2>Using AI Responsibly</h2>
                     <div class="content">
-                        <div id="scoreReport">
-                            <p>Click the button below to see your final score.</p>
-                            <button onclick="generateScoreReport()" class="check-button">View Score Report</button>
-                            <div id="scoreResults" style="display: none;">
-                                <div id="scoreDisplay"></div>
-                                <div id="scoreBreakdown"></div>
+                        <img src="images/responsible-use.jpg" alt="Responsible technology use" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>AI is a tool, and like any tool, you need to use it the right way. Here's how:</p>
+
+                        <div style="background-color: #d4edda; padding: 20px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <h3 style="margin-top: 0;">✅ DO Use AI To:</h3>
+                            <ul>
+                                <li>Help you understand difficult concepts</li>
+                                <li>Get examples of how things work</li>
+                                <li>Learn from well-explained code</li>
+                                <li>Debug errors when you're stuck</li>
+                                <li>Explore new programming techniques</li>
+                            </ul>
+                        </div>
+
+                        <div style="background-color: #f8d7da; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">❌ DON'T Use AI To:</h3>
+                            <ul>
+                                <li>Copy code without understanding it</li>
+                                <li>Cheat on assignments or tests</li>
+                                <li>Avoid learning - that only hurts you!</li>
+                                <li>Claim AI's work as entirely your own</li>
+                                <li>Replace your own thinking and problem-solving</li>
+                            </ul>
+                        </div>
+
+                        <p><strong>Remember:</strong> The goal of school is to learn. If you use AI to avoid learning, you're only cheating yourself!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 31: CHECK YOUR SYLLABUS! -->
+                <div class="slide" data-slide="31" data-type="content">
+                    <h2>⚠️ CHECK YOUR SYLLABUS!</h2>
+                    <div class="content">
+                        <img src="images/student-teacher.jpg" alt="Student talking with instructor" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p style="font-size: 18px;"><strong>This is SUPER important - please pay attention!</strong></p>
+
+                        <div style="background-color: #f8d7da; padding: 25px; margin: 20px 0; border-radius: 8px; border: 3px solid #dc3545;">
+                            <h3 style="margin-top: 0; color: #721c24;">⚠️ IMPORTANT: Different Instructors Have Different Rules!</h3>
+
+                            <div style="font-size: 16px; line-height: 1.8;">
+                                <p><strong>✅ CHECK YOUR SYLLABUS</strong><br>
+                                Does it say anything about AI or Copilot? Some instructors allow it, some don't, and some have specific rules.</p>
+
+                                <p><strong>✅ TALK TO YOUR INSTRUCTOR</strong><br>
+                                Ask questions! Your instructors are here to help you succeed. If you're not sure about something, just ask. They won't be mad - they'll appreciate that you're being responsible!</p>
+
+                                <p><strong>✅ DON'T ASSUME</strong><br>
+                                Just because AI is allowed in one class doesn't mean it's allowed in another. Each instructor might have different policies.</p>
+
+                                <p><strong>✅ WHEN IN DOUBT, ASK</strong><br>
+                                Seriously - if you're not sure if you can use AI for something, ask your instructor BEFORE you do it. It's way better to ask than to get in trouble later!</p>
+                            </div>
+                        </div>
+
+                        <div style="background-color: #fff3cd; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                            <p style="margin: 0; font-size: 16px;"><strong>📧 Remember:</strong> Each of your classes might have different AI policies. Always check the syllabus for EACH class, and talk to EACH instructor about their specific rules.</p>
+                        </div>
+
+                        <p style="font-size: 16px;"><strong>Your instructors want to help you!</strong> They're not trying to catch you doing something wrong - they want you to learn and succeed. Don't be afraid to ask questions!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 32: Quiz 8 -->
+                <div class="slide" data-slide="32" data-type="quiz">
+                    <h2>Quick Check #8</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>What should you do if you're not sure if you can use AI for an assignment?</strong></p>
+                            <label><input type="radio" name="q8" value="a"> Use it anyway and hope for the best</label>
+                            <label><input type="radio" name="q8" value="b"> Check your syllabus and ask your instructor</label>
+                            <label><input type="radio" name="q8" value="c"> Ask your friend what they're doing</label>
+                            <label><input type="radio" name="q8" value="d"> Don't use it at all, just to be safe</label>
+                            <div class="feedback" id="feedback-q8"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 33: How to Cite AI -->
+                <div class="slide" data-slide="33" data-type="content">
+                    <h2>When and How to Cite AI Assistance</h2>
+                    <div class="content">
+                        <img src="images/citation-documentation.jpg" alt="Documentation and citation" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>If your instructor says you CAN use AI, you still need to be honest about using it! Here's how:</p>
+
+                        <h3>Simple Ways to Cite AI:</h3>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <h4 style="margin-top: 0;">Example 1: General Help</h4>
+                            <p style="font-family: monospace; background-color: #fff; padding: 10px; border-radius: 4px;">"I used Microsoft Copilot to help me understand how variables work in Python."</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h4 style="margin-top: 0;">Example 2: Code Assistance</h4>
+                            <p style="font-family: monospace; background-color: #fff; padding: 10px; border-radius: 4px;">"Microsoft Copilot helped me write the code for the input() function section."</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h4 style="margin-top: 0;">Example 3: Debugging</h4>
+                            <p style="font-family: monospace; background-color: #fff; padding: 10px; border-radius: 4px;">"I used Microsoft Copilot to help debug an error on line 15."</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>Being honest about using AI is important!</strong> It shows you're being responsible and ethical.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 34: Quiz 9 -->
+                <div class="slide" data-slide="34" data-type="quiz">
+                    <h2>Quick Check #9</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>If you use Copilot to help with an assignment (and your instructor allows it), should you mention it?</strong></p>
+                            <label><input type="radio" name="q9" value="a"> No, keep it secret</label>
+                            <label><input type="radio" name="q9" value="b"> Yes, cite how you used it</label>
+                            <label><input type="radio" name="q9" value="c"> Only if you got caught</label>
+                            <label><input type="radio" name="q9" value="d"> It doesn't matter</label>
+                            <div class="feedback" id="feedback-q9"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 35: Privacy and Security -->
+                <div class="slide" data-slide="35" data-type="content">
+                    <h2>Privacy and Data Security</h2>
+                    <div class="content">
+                        <img src="images/privacy-security.jpg" alt="Privacy and security lock" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>Don't share personal or sensitive information with AI tools! Here's what you need to know:</p>
+
+                        <div style="background-color: #f8d7da; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
+                            <h3 style="margin-top: 0;">❌ NEVER Share These:</h3>
+                            <ul>
+                                <li>Passwords (to anything!)</li>
+                                <li>Social security numbers</li>
+                                <li>Credit card information</li>
+                                <li>Private addresses or phone numbers</li>
+                                <li>Personal health information</li>
+                                <li>Banking information</li>
+                            </ul>
+                        </div>
+
+                        <h3>Why not?</h3>
+                        <p>AI tools learn from the information you give them. Whatever you type might be stored and used to train the AI. It's like posting on social media - don't share what you want to keep private!</p>
+
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0;"><strong>Good rule:</strong> If you wouldn't post it publicly on Facebook, don't tell it to an AI!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 36: Quiz 10 -->
+                <div class="slide" data-slide="36" data-type="quiz">
+                    <h2>Quick Check #10</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>Which of these should you NEVER share with Copilot or other AI tools?</strong></p>
+                            <label><input type="radio" name="q10" value="a"> Python code questions</label>
+                            <label><input type="radio" name="q10" value="b"> Your password</label>
+                            <label><input type="radio" name="q10" value="c"> Error messages from your program</label>
+                            <label><input type="radio" name="q10" value="d"> Questions about how to use the print() function</label>
+                            <div class="feedback" id="feedback-q10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 37: Section Intro - Practice & Application -->
+                <div class="slide" data-slide="37" data-type="content">
+                    <h2>Practice & Application</h2>
+                    <div class="content">
+                        <img src="images/practice-time.jpg" alt="Practice and hands-on learning" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>You've learned a lot! Now it's time to put it all together with some practice.</p>
+
+                        <p>In this final section:</p>
+                        <ul>
+                            <li>A challenging practice activity</li>
+                            <li>Common mistakes to avoid</li>
+                            <li>Final quiz questions</li>
+                        </ul>
+
+                        <p>Don't worry - you've got this! Remember everything you learned about using Copilot responsibly and checking your work.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 38: Try It Yourself #2 -->
+                <div class="slide" data-slide="38" data-type="content">
+                    <h2>Try It Yourself! Activity #2</h2>
+                    <div class="content">
+                        <img src="images/challenge-puzzle.jpg" alt="Challenge and problem solving" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>Ready for a real challenge? Don't worry, it's still pretty simple for week 2!</p>
+
+                        <div style="background-color: #fff3cd; padding: 25px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #ffc107; clear: both;">
+                            <h3 style="margin-top: 0;">🎯 Your Challenge:</h3>
+                            <p style="font-size: 16px;"><strong>Create a Python program that asks someone for their favorite number and then doubles it.</strong></p>
+
+                            <h4>Step-by-Step Checklist:</h4>
+                            <p><input type="checkbox" id="practice2-1"> <strong>Step 1:</strong> Write a prompt asking Copilot to help with this</p>
+                            <p><input type="checkbox" id="practice2-2"> <strong>Step 2:</strong> Read the code Copilot gives you - do you understand each line?</p>
+                            <p><input type="checkbox" id="practice2-3"> <strong>Step 3:</strong> Try running the code (if you can access a Python environment)</p>
+                            <p><input type="checkbox" id="practice2-4"> <strong>Step 4:</strong> Can you explain what the code does to someone else?</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>💡 Hint:</strong> You'll need input(), a variable, multiplication (*), and print()!</p>
+                        </div>
+
+                        <div style="background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0366d6; margin-top: 20px; border-radius: 4px;">
+                            <p style="margin: 0;"><strong>Remember:</strong> This is just for practice - it's not graded! The goal is to learn and build confidence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 39: Quiz 11 -->
+                <div class="slide" data-slide="39" data-type="quiz">
+                    <h2>Quick Check #11</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>Scenario: Copilot gave you code but it has an error. What's your first step?</strong></p>
+                            <label><input type="radio" name="q11" value="a"> Give up and start over</label>
+                            <label><input type="radio" name="q11" value="b"> Copy it anyway - it's probably fine</label>
+                            <label><input type="radio" name="q11" value="c"> Read the code carefully to find the mistake</label>
+                            <label><input type="radio" name="q11" value="d"> Delete Python from your computer</label>
+                            <div class="feedback" id="feedback-q11"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 40: Common Mistakes to Avoid -->
+                <div class="slide" data-slide="40" data-type="content">
+                    <h2>Common Mistakes to Avoid</h2>
+                    <div class="content">
+                        <img src="images/learning-mistakes.jpg" alt="Learning from mistakes" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>Let's talk about mistakes people make when using AI. Learn from them so you don't make the same ones!</p>
+
+                        <div style="background-color: #f8d7da; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
+                            <h3 style="margin-top: 0;">❌ Mistake #1: Copying Without Reading</h3>
+                            <p>Some people just copy Copilot's code without reading it. Then they're surprised when it doesn't work or when they can't explain it!</p>
+                            <p><strong>Solution:</strong> Always read and understand the code first.</p>
+                        </div>
+
+                        <div style="background-color: #f8d7da; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
+                            <h3 style="margin-top: 0;">❌ Mistake #2: Not Testing</h3>
+                            <p>Assuming the code works without actually running it. AI makes mistakes!</p>
+                            <p><strong>Solution:</strong> Always test code before assuming it's correct.</p>
+                        </div>
+
+                        <div style="background-color: #f8d7da; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
+                            <h3 style="margin-top: 0;">❌ Mistake #3: Vague Questions</h3>
+                            <p>Asking "python" or "help" instead of being specific.</p>
+                            <p><strong>Solution:</strong> Write clear, detailed prompts.</p>
+                        </div>
+
+                        <div style="background-color: #f8d7da; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
+                            <h3 style="margin-top: 0;">❌ Mistake #4: Using AI When You Should Practice</h3>
+                            <p>Using Copilot for everything instead of building your own skills.</p>
+                            <p><strong>Solution:</strong> Try coding yourself first, use AI when stuck.</p>
+                        </div>
+
+                        <div style="background-color: #f8d7da; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
+                            <h3 style="margin-top: 0;">❌ Mistake #5: Not Asking About Instructor Policies</h3>
+                            <p>Assuming it's okay to use AI without checking the syllabus or asking.</p>
+                            <p><strong>Solution:</strong> Always check your syllabus and ask your instructor!</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>The good news?</strong> These are all easy to avoid! Just be thoughtful and responsible when using AI.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 41: Quiz 12 -->
+                <div class="slide" data-slide="41" data-type="quiz">
+                    <h2>Quick Check #12</h2>
+                    <div class="content">
+                        <div class="quiz-question">
+                            <p><strong>Which is the BEST way to use Copilot for learning Python?</strong></p>
+                            <label><input type="radio" name="q12" value="a"> Copy all the code without reading it</label>
+                            <label><input type="radio" name="q12" value="b"> Use it to understand examples, then practice on your own</label>
+                            <label><input type="radio" name="q12" value="c"> Never use it - AI is bad</label>
+                            <label><input type="radio" name="q12" value="d"> Only use it for tests and quizzes</label>
+                            <div class="feedback" id="feedback-q12"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 42: Section Intro - Summary & Resources -->
+                <div class="slide" data-slide="42" data-type="content">
+                    <h2>Wrapping Up!</h2>
+                    <div class="content">
+                        <img src="images/summary-conclusion.jpg" alt="Summary and conclusion" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>You made it! Let's wrap up what you've learned and talk about where to go from here.</p>
+
+                        <p>In this final section:</p>
+                        <ul>
+                            <li>Key takeaways from the lesson</li>
+                            <li>Resources for getting help</li>
+                        </ul>
+
+                        <p>Great job completing this lesson! You now know how to use AI responsibly to help you learn Python.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 43: Key Takeaways -->
+                <div class="slide" data-slide="43" data-type="content">
+                    <h2>Key Takeaways</h2>
+                    <div class="content">
+                        <img src="images/key-points.jpg" alt="Key points and takeaways" style="float: left; width: 320px; height: auto; margin: 0 20px 20px 0; border-radius: 8px;">
+
+                        <p>Let's review the most important things to remember:</p>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px; clear: both;">
+                            <h3 style="margin-top: 0;">✅ What You Learned:</h3>
+                            <ul>
+                                <li><strong>AI like Copilot can help you learn Python faster</strong> - It's a powerful learning tool when used right</li>
+                                <li><strong>Always read, test, and understand AI code</strong> - Never just copy without checking</li>
+                                <li><strong>Check your syllabus and ask your instructor about AI policies</strong> - Every class might have different rules</li>
+                                <li><strong>Use AI as a learning tool, not a shortcut</strong> - The goal is to learn, not to avoid learning</li>
+                                <li><strong>Be specific with your prompts</strong> - Better questions get better answers</li>
+                                <li><strong>Keep learning!</strong> - AI is just one tool in your programmer toolkit</li>
+                            </ul>
+                        </div>
+
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107;">
+                            <p style="margin: 0;"><strong>🤣 One More Joke For The Road!</strong><br>
+                            Why do programmers always mix up Halloween and Christmas?<br>
+                            Because Oct 31 equals Dec 25!<br>
+                            <em>(Get it? Octal 31 = Decimal 25... okay, you'll understand this joke later in your programming journey!)</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 44: Resources & Getting Help -->
+                <div class="slide" data-slide="44" data-type="content">
+                    <h2>Resources & Getting Help</h2>
+                    <div class="content">
+                        <img src="images/resources-help.jpg" alt="Resources and getting help" style="float: right; width: 320px; height: auto; margin: 0 0 20px 20px; border-radius: 8px;">
+
+                        <p>You're not alone on your Python learning journey! Here are resources to help you:</p>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">🎓 Your Instructor</h3>
+                            <p>Your #1 resource! Attend office hours, ask questions in class, and don't be shy about reaching out.</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">💻 Microsoft Copilot</h3>
+                            <p><strong>copilot.microsoft.com</strong><br>
+                            Your AI coding assistant - use it responsibly!</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">📚 Tutoring Center</h3>
+                            <p>Check if your school has a tutoring center or lab where you can get help with Python and programming.</p>
+                        </div>
+
+                        <div style="background-color: #f0f7ff; padding: 20px; margin: 15px 0; border-radius: 8px;">
+                            <h3 style="margin-top: 0;">👥 Study Groups</h3>
+                            <p>Team up with classmates! Explaining code to others helps you learn too.</p>
+                        </div>
+
+                        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>Remember: Asking for help is smart, not weak!</strong> Every great programmer started as a beginner, and they all got help along the way.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 45: Score Report -->
+                <div class="slide" data-slide="45" data-type="content">
+                    <h2>📊 Your Quiz Score</h2>
+                    <div class="content" id="scoreReportContent">
+                        <div style="text-align: center; padding: 40px 20px;">
+                            <div style="background-color: #f0f7ff; padding: 30px; margin: 20px auto; border-radius: 12px; max-width: 600px;">
+                                <h3 style="margin-top: 0;">Quiz Results</h3>
+                                <div id="scoreDisplay" style="font-size: 48px; font-weight: bold; color: #6F2C91; margin: 20px 0;">
+                                    --/12
+                                </div>
+                                <div id="percentageDisplay" style="font-size: 24px; margin: 10px 0;">
+                                    --%
+                                </div>
+                                <div id="passFailDisplay" style="font-size: 20px; margin: 20px 0; padding: 15px; border-radius: 8px;">
+                                    Complete all quiz questions to see your score
+                                </div>
+
+                                <div id="detailedResults" style="text-align: left; margin-top: 30px; padding: 20px; background-color: #fff; border-radius: 8px;">
+                                    <h4>Question Breakdown:</h4>
+                                    <div id="questionBreakdown"></div>
+                                </div>
+
+                                <div style="margin-top: 30px;">
+                                    <button onclick="printScoreReport()" style="margin: 10px; padding: 12px 24px; font-size: 16px; background-color: #6F2C91; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                                        🖨️ Print Report
+                                    </button>
+                                    <button onclick="emailScoreReport()" style="margin: 10px; padding: 12px 24px; font-size: 16px; background-color: #4A4A4A; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                                        📧 Email Report
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 23: Credits -->
-                <div class="slide" data-slide="23" data-type="credits">
+                <!-- Slide 46: Credits (STATIC - not scrolling) -->
+                <div class="slide" data-slide="46" data-type="content">
                     <h2>Credits</h2>
                     <div class="content">
-                        
-                        
-                        <div class="credits-container">
-                            <div class="credits-scroll">
-                                <div class="credits-section">
-                                    <p><strong>Text by:</strong> Dr. Mary Lebens</p>
-                                    <p>Minneapolis College</p>
-                                </div>
+                        <div style="text-align: center; padding: 40px 20px;">
+                            <h2 style="font-size: 36px; color: #6F2C91; margin: 40px 0;">CREDITS</h2>
 
-                                <div class="credits-section">
-                                    <h3>Images</h3>
-                                    <p>Licensed under Creative Commons License 0</p>
-                                    <p>Retrieved from: <a href="https://www.publicdomainpictures.net/en/" target="_blank" rel="noopener noreferrer">Public Domain Pictures - Free Images & Stock Photos for Commercial Use</a></p>
-                                </div>
+                            <div style="margin: 40px auto; max-width: 600px;">
+                                <p style="font-size: 24px; margin: 40px 0 20px 0;"><strong>Content Created By</strong></p>
+                                <p style="font-size: 20px;">Dr. Mary Lebens</p>
 
-                                <div class="credits-section">
-                                    <h3>Video</h3>
-                                    <p>"A brief introduction to Git for beginners" by GitHub</p>
-                                    <p><a href="https://www.youtube.com/watch?v=r8jQ9hVA2qs&list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f" target="_blank" rel="noopener noreferrer">YouTube Link</a></p>
-                                </div>
+                                <p style="font-size: 24px; margin: 60px 0 20px 0;"><strong>Images</strong></p>
+                                <p>Retrieved from publicdomainimages.net</p>
+                                <p>Used under Creative Commons License 0</p>
 
-                                <div class="credits-section">
-                                    <h3>Music</h3>
-                                    <p><strong>Artist:</strong> Alex Beroza</p>
-                                    <p><strong>Song:</strong> All As One</p>
-                                    <p><strong>Composer:</strong> Alex Beroza</p>
-                                    <p><strong>Produced by:</strong> Alex Beroza, Snowflake, Patronski, stellarartworks</p>
-                                    <p><strong>Copyright:</strong> ArtisTech Media</p>
-                                    <p><a href="https://dig.ccmixter.org/files/AlexBeroza/55220" target="_blank" rel="noopener noreferrer">dig.ccmixter.org/files/AlexBeroza/55220</a></p>
-                                    <p>(c) copyright 2016 Licensed under a Creative Commons Attribution Noncommercial (3.0) license.</p>
-                                </div>
+                                <p style="font-size: 24px; margin: 60px 0 20px 0;"><strong>Music</strong></p>
+                                <p>From CCMixter.org</p>
+                                <p>Used under Creative Commons License</p>
 
-                                <div class="credits-section">
-                                    <h3>License</h3>
-                                    <p><strong>This lesson is licensed under Creative Commons and can be re-used by other educators at non-profit institutions.</strong></p>
-                                    <p style="margin-top: 15px;"><strong>CC BY-NC-SA 4.0</strong></p>
-                                    <p>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</p>
-                                </div>
+                                <p style="font-size: 28px; margin: 80px 0 30px 0; color: #6F2C91;"><strong>LICENSE</strong></p>
+                                <p style="max-width: 800px; margin: 20px auto; font-size: 16px; line-height: 1.8;">
+                                    This lesson can be re-used by educators at<br>
+                                    non-profit institutions under<br>
+                                    <strong>Creative Commons Attribution 4.0</strong><br>
+                                    <strong>International Public License</strong>
+                                </p>
 
-                                <div class="credits-section">
-                                    <p>This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only. If others modify or adapt the material, they must license the modified material under identical terms.</p>
-                                </div>
+                                <p style="max-width: 800px; margin: 40px auto; font-size: 16px;">
+                                    Attribution for the author, Dr. Mary Lebens,<br>
+                                    is required under this license.
+                                </p>
 
-                                <div class="credits-section">
-                                    <p><strong>BY:</strong> Credit must be given to you, the creator.</p>
-                                    <p><strong>NC:</strong> Only noncommercial use of your work is permitted. Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</p>
-                                    <p><strong>SA:</strong> Adaptations must be shared under the same terms.</p>
-                                </div>
+                                <p style="max-width: 800px; margin: 40px auto; font-size: 16px;">
+                                    Please contact Dr. Lebens at<br>
+                                    <strong>mary.lebens@minneapolis.edu</strong><br>
+                                    for the source code if you would like<br>
+                                    to re-use this lesson.
+                                </p>
 
-                                <div class="credits-section">
-                                    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">See the License Deed</a></p>
-                                </div>
-
-                                <div class="credits-section" style="margin-top: 40px;">
-                                    <p style="font-size: 20px; font-weight: bold;">Thank you for learning with us!</p>
-                                </div>
+                                <p style="font-size: 32px; margin: 80px 0 40px 0; color: #6F2C91;">
+                                    <strong>Thank you for learning with us!</strong>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -744,29 +1318,26 @@
 
         <footer>
             <div class="navigation">
-                <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
-                <span id="slideIndicator" aria-live="polite">Slide 1 of 18</span>
-                <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+                <button id="prevBtn" onclick="changeSlide(-1)" aria-label="Previous slide">← Previous</button>
+                <span id="slideIndicator" aria-live="polite">Slide 1 of 46</span>
+                <button id="nextBtn" onclick="changeSlide(1)" aria-label="Next slide">Next →</button>
             </div>
         </footer>
     </div>
 
-    <!-- Email Modal -->
-    <div id="emailModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Email Score Report</h3>
-                <span class="close" onclick="closeEmailModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <label for="studentEmail">Enter your email address:</label>
-                <input type="email" id="studentEmail" placeholder="your.email@example.com" required>
-            </div>
-            <div class="modal-footer">
-                <button onclick="closeEmailModal()" class="secondary-button">Cancel</button>
-                <button onclick="sendScoreEmail()" class="primary-button">Send Email</button>
-            </div>
-        </div>
-    </div>
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <span id="menuIcon">☰</span>
+    </button>
+
+    <script>
+        // Toggle menu function
+        function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar-menu');
+            const icon = document.getElementById('menuIcon');
+            sidebar.classList.toggle('collapsed');
+            icon.textContent = sidebar.classList.contains('collapsed') ? '☰' : '✕';
+        }
+    </script>
 </body>
 </html>
