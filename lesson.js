@@ -164,6 +164,11 @@ function goToSlide(slideNum) {
     // Track progress in SCORM
     trackProgress();
 
+    // Generate score report when visiting slide 45
+    if (slideNum === 45) {
+        generateScoreReport();
+    }
+
     // Scroll to top
     window.scrollTo(0, 0);
 }
@@ -299,24 +304,32 @@ function generateScoreReport() {
     let correctAnswers = 0;
 
     // Get display elements
-    const resultsDiv = document.getElementById('scoreResults');
-    const displayDiv = document.getElementById('scoreDisplay');
-    const breakdownDiv = document.getElementById('scoreBreakdown');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentageDisplay = document.getElementById('percentageDisplay');
+    const passFailDisplay = document.getElementById('passFailDisplay');
+    const questionBreakdown = document.getElementById('questionBreakdown');
 
-    // Count answered questions
-    const answeredCount = Object.keys(answeredQuestions).length;
+    // Count how many questions have been answered (not necessarily correctly)
+    let answeredCount = 0;
+    for (let key in answeredQuestions) {
+        if (answeredQuestions[key] !== null && answeredQuestions[key] !== undefined) {
+            answeredCount++;
+        }
+    }
 
     // Check if all questions have been answered
     if (answeredCount < totalQuestions) {
-        resultsDiv.style.display = 'block';
-        displayDiv.className = 'warning';
-        displayDiv.innerHTML = `
-            <p><strong>⚠️ Please Complete All Quiz Questions First</strong></p>
-            <p>You have answered ${answeredCount} out of ${totalQuestions} questions.</p>
-            <p>Please go back and answer all quiz questions before viewing your score report.</p>
-            <p style="margin-top: 15px; font-size: 14px;">Quiz questions are located throughout the lesson. Use the navigation menu on the left and expand the topics to see all quiz questions.</p>
+        scoreDisplay.textContent = '--/12';
+        percentageDisplay.textContent = '--%';
+        passFailDisplay.style.backgroundColor = '#fff3cd';
+        passFailDisplay.style.borderColor = '#ffc107';
+        passFailDisplay.innerHTML = `
+            <strong>⚠️ Please Complete All Quiz Questions First</strong><br><br>
+            You have answered ${answeredCount} out of ${totalQuestions} questions.<br><br>
+            Please go back and answer all quiz questions before viewing your score report.<br><br>
+            <small>Quiz questions are located throughout the lesson. Use the navigation menu on the left and expand the topics to see all quiz questions.</small>
         `;
-        breakdownDiv.innerHTML = '';
+        questionBreakdown.innerHTML = '';
         return;
     }
 
@@ -334,10 +347,7 @@ function generateScoreReport() {
     console.log(`Quiz Score: ${correctAnswers}/${totalQuestions} = ${percentage}%`);
     console.log(`Pass Status: ${passed}`);
 
-    // Display results
-    resultsDiv.style.display = 'block';
-
-    // Store score data for email/print
+    // Store score data for email/print/certificate
     window.scoreData = {
         correct: correctAnswers,
         total: totalQuestions,
@@ -347,32 +357,53 @@ function generateScoreReport() {
         breakdown: answeredQuestions
     };
 
-    // Score display
+    // Update score display
+    scoreDisplay.textContent = `${correctAnswers}/12`;
+    percentageDisplay.textContent = `${percentage}%`;
+
+    // Update pass/fail display
+    const certificateButton = document.getElementById('certificateButton');
     if (passed) {
-        displayDiv.className = 'pass';
-        displayDiv.innerHTML = `<p>Congratulations! You passed!</p>
-                                <p>Score: ${correctAnswers} out of ${totalQuestions} (${percentage}%)</p>
-                                <p>Date: ${window.scoreData.date}</p>`;
+        passFailDisplay.style.backgroundColor = '#d4edda';
+        passFailDisplay.style.borderColor = '#28a745';
+        passFailDisplay.style.color = '#155724';
+        passFailDisplay.innerHTML = `
+            <strong>✓ PASSED</strong><br><br>
+            Congratulations! You have successfully completed the lesson.<br>
+            Date: ${window.scoreData.date}
+        `;
 
-        // Set score and status for D2L
+        // Show certificate button
+        if (certificateButton) {
+            certificateButton.style.display = 'inline-block';
+        }
+
+        // Set score and status for SCORM
         scorm.setScore(percentage, 0, 100);
-        scorm.setPassed();  // Set status to "passed"
-        scorm.save();       // Save AFTER setting all values
+        scorm.setPassed();
+        scorm.save();
     } else {
-        displayDiv.className = 'fail';
-        displayDiv.innerHTML = `<p>You scored ${correctAnswers} out of ${totalQuestions} (${percentage}%)</p>
-                                <p>You need at least 70% to pass. Please review the material and retake the quizzes.</p>
-                                <p>Date: ${window.scoreData.date}</p>`;
+        passFailDisplay.style.backgroundColor = '#f8d7da';
+        passFailDisplay.style.borderColor = '#dc3545';
+        passFailDisplay.style.color = '#721c24';
+        passFailDisplay.innerHTML = `
+            <strong>✗ NOT PASSED</strong><br><br>
+            You need at least 70% to pass. Please review the material and retake the quizzes.<br>
+            Date: ${window.scoreData.date}
+        `;
 
-        // Set score and status for D2L
+        // Hide certificate button
+        if (certificateButton) {
+            certificateButton.style.display = 'none';
+        }
+
+        // Set score and status for SCORM
         scorm.setScore(percentage, 0, 100);
-        scorm.setFailed();  // Set status to "failed"
-        scorm.save();       // Save AFTER setting all values
+        scorm.setFailed();
+        scorm.save();
     }
 
-    // Breakdown
-    breakdownDiv.innerHTML = '<h3>Question Breakdown</h3>';
-
+    // Build question breakdown
     const questionLabels = {
         q1: 'Question 1: Example of AI',
         q2: 'Question 2: How AI learns',
@@ -388,30 +419,19 @@ function generateScoreReport() {
         q12: 'Question 12: Best way to use Copilot'
     };
 
+    questionBreakdown.innerHTML = '';
     for (let key in answeredQuestions) {
         const isCorrect = answeredQuestions[key];
-        const itemClass = isCorrect ? 'correct' : 'incorrect';
         const icon = isCorrect ? '✓' : '✗';
+        const color = isCorrect ? '#28a745' : '#dc3545';
+        const bgColor = isCorrect ? '#d4edda' : '#f8d7da';
 
-        breakdownDiv.innerHTML += `
-            <div class="score-item ${itemClass}">
-                <span>${questionLabels[key]}</span>
-                <span class="score-icon">${icon}</span>
+        questionBreakdown.innerHTML += `
+            <div style="padding: 10px; margin: 5px 0; background-color: ${bgColor}; border-left: 4px solid ${color}; border-radius: 4px;">
+                <strong>${questionLabels[key]}:</strong> <span style="color: ${color};">${icon} ${isCorrect ? 'Correct' : 'Incorrect'}</span>
             </div>
         `;
     }
-
-    // Add action buttons
-    breakdownDiv.innerHTML += `
-        <div class="score-actions">
-            <button onclick="printScoreReport()" class="print-button">🖨️ Print Score Report</button>
-            <button onclick="showEmailModal()" class="email-button">📧 Email Score Report</button>
-            ${passed ? '<button onclick="generateCertificate()" class="certificate-button">🎓 Download Certificate</button>' : ''}
-        </div>
-    `;
-
-    // Scroll to results
-    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     console.log(`Quiz completed: ${correctAnswers}/${totalQuestions} (${percentage}%)`);
 }
@@ -493,28 +513,20 @@ function printScoreReport() {
     }, 1000);
 }
 
-// Show email modal
-function showEmailModal() {
-    const modal = document.getElementById('emailModal');
-    modal.style.display = 'block';
+// Email score report
+function emailScoreReport() {
+    if (!window.scoreData) {
+        alert('Please complete all quiz questions first to generate your score report.');
+        return;
+    }
 
-    // Focus on email input
-    document.getElementById('studentEmail').focus();
-}
-
-// Close email modal
-function closeEmailModal() {
-    const modal = document.getElementById('emailModal');
-    modal.style.display = 'none';
-    document.getElementById('studentEmail').value = '';
-}
-
-// Send email with score report
-function sendScoreEmail() {
-    const email = document.getElementById('studentEmail').value;
+    // Prompt for email address
+    const email = prompt('Enter your email address to receive the score report:');
 
     if (!email || !email.includes('@')) {
-        alert('Please enter a valid email address.');
+        if (email !== null) {
+            alert('Please enter a valid email address.');
+        }
         return;
     }
 
@@ -541,19 +553,8 @@ This is an automated message from the lesson SCORM package.`;
     // Open email client
     window.location.href = mailtoLink;
 
-    // Close modal
-    closeEmailModal();
-
     // Show confirmation
     alert(`An email draft has been created. Please send it from your email client to: ${email}`);
-}
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-    const modal = document.getElementById('emailModal');
-    if (event.target === modal) {
-        closeEmailModal();
-    }
 }
 
 // Resume from bookmark if available
@@ -575,7 +576,7 @@ window.addEventListener('load', function() {
 // ============================================
 // CERTIFICATE GENERATION
 // ============================================
-function generateCertificate() {
+function printCertificate() {
     if (!window.scoreData || window.scoreData.percentage < 70) {
         alert('You must pass the quiz with 70% or higher to generate a certificate.');
         return;
@@ -641,3 +642,38 @@ function markSlideAsVisited(slideNum) {
     const navItem = document.getElementById('nav-' + slideNum);
     if (navItem) navItem.classList.add('visited');
 }
+
+// ============================================
+// INTERACTIVE ELEMENTS
+// ============================================
+
+// Accordion functionality
+function toggleAccordion(element) {
+    element.classList.toggle('active');
+    const content = element.nextElementSibling;
+    content.classList.toggle('active');
+}
+
+// Flip card functionality (for mobile/touch devices)
+function toggleFlipCard(card) {
+    card.classList.toggle('flipped');
+}
+
+// Initialize interactive elements when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Set up accordion click handlers
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            toggleAccordion(this);
+        });
+    });
+
+    // Set up flip card click handlers for mobile
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+        card.addEventListener('click', function() {
+            toggleFlipCard(this);
+        });
+    });
+});
