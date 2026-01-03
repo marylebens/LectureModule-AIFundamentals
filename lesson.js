@@ -1,6 +1,6 @@
 // AI Fundamentals Lesson JavaScript
 let currentSlide = 1;
-const totalSlides = 37; // Total number of slides including all content, quizzes, score report, and credits
+const totalSlides = 32; // Total number of slides including all content, quizzes, score report, and credits
 
 // Audio mapping for slides with audio narration
 // Placeholders for all non-quiz slides (quiz slides don't have audio)
@@ -60,17 +60,17 @@ let persistentAudio = null;
 // Quiz answers - All 12 quiz questions
 const quizAnswers = {
     q1: 'b',   // Which is an example of AI? Answer: Voice assistant like Siri/Alexa
-    q2: 'b',   // How does AI get better? Answer: By seeing lots of examples
+    q2: 'a',   // How does AI get better? Answer: By seeing lots of examples
     q3: 'b',   // What website for Copilot? Answer: copilot.microsoft.com
-    q4: 'b',   // What account to login? Answer: StarID@go.minneapolis.edu
+    q4: 'd',   // What account to login? Answer: StarID@go.minneapolis.edu
     q5: 'b',   // Better prompt? Answer: "Write Python code to print my name"
-    q6: 'b',   // When you READ code, what are you checking? Answer: Do I understand what it does?
+    q6: 'a',   // When you READ code, what are you checking? Answer: Do I understand what it does?
     q7: 'b',   // What to do with AI code? Answer: Read, test, understand it
-    q8: 'b',   // Not sure about AI policy? Answer: Check syllabus and ask instructor
-    q9: 'b',   // Should you mention using Copilot? Answer: Yes, cite how you used it
-    q10: 'b',  // Never share with AI? Answer: Your password
+    q8: 'c',   // Professional practice with AI code? Answer: Review, understand, test, validate
+    q9: 'c',   // Never input to public AI? Answer: Company proprietary code or credentials
+    q10: 'd',  // Never share with AI? Answer: Your password
     q11: 'c',  // Copilot code has error? Answer: Read code carefully to find mistake
-    q12: 'b'   // Best way to use Copilot? Answer: Understand examples, then practice
+    q12: 'a'   // Best way to use Copilot? Answer: Understand examples, then practice
 };
 
 // Track answered questions
@@ -165,7 +165,7 @@ function goToSlide(slideNum) {
     trackProgress();
 
     // Generate score report when visiting slide 45
-    if (slideNum === 36) {
+    if (slideNum === 31) {
         generateScoreReport();
     }
 
