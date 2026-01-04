@@ -1,6 +1,6 @@
 // AI Fundamentals Lesson JavaScript
 let currentSlide = 1;
-const totalSlides = 31; // Total number of slides including all content, quizzes, score report, and credits
+const totalSlides = 33; // Total number of slides including all content, quizzes, score report, and credits
 
 // Audio mapping for slides with audio narration
 // Placeholders for all non-quiz slides (quiz slides don't have audio)
@@ -164,8 +164,8 @@ function goToSlide(slideNum) {
     // Track progress in SCORM
     trackProgress();
 
-    // Generate score report when visiting slide 45
-    if (slideNum === 30) {
+    // Generate score report when visiting slide 32
+    if (slideNum === 32) {
         generateScoreReport();
     }
 
